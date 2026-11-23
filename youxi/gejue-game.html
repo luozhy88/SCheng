@@ -140,6 +140,9 @@ body{
 .treasure-box{font-size:90px;animation:bob 2s infinite;cursor:pointer}
 .treasure-open{font-size:90px;animation:pop .5s}
 
+.btn-mini{background:#ffe1e1;border:1px solid #e05252;color:#c0392b;border-radius:8px;
+  padding:2px 9px;font-size:12px;cursor:pointer}
+
 /* 无尽 */
 #scr-endless{background:linear-gradient(180deg,#2b1055,#7597de)}
 
@@ -158,6 +161,7 @@ body{
   <!-- 地图 -->
   <div class="screen" id="scr-map">
     <div class="hud">
+      <button class="coin" id="btn-user" style="cursor:pointer;border:none;font-family:inherit">👤 <span id="username">…</span></button>
       <div class="coin">🪙 <span id="coins">0</span></div>
       <div class="sp"></div>
       <button class="iconbtn" id="btn-mute" title="音效">🔊</button>
@@ -182,9 +186,11 @@ body{
       <div class="monster-zone" id="mzone"></div>
       <div class="slots" id="slots"></div>
       <div class="bubble-field" id="bfield"></div>
-      <div id="overlay-root"></div>
     </div>
   </div>
+
+  <!-- 全局弹层（地图/战斗共用） -->
+  <div id="overlay-root"></div>
 </div>
 
 <script>
@@ -3910,17 +3916,45 @@ for(let i=CARDS.length-1;i>=0;i--){
   if(seen.has(k))CARDS.splice(i,1);else seen.add(k);
 }
 
-/* ================= 存档 ================= */
+/* ================= 存档（多用户） ================= */
 const LS="gejue-adventure-v1";
-let save={coins:0,levels:{},best:0,muted:false};
-try{const r=localStorage.getItem(LS);if(r)save=Object.assign(save,JSON.parse(r));}catch(e){}
-function persist(){try{localStorage.setItem(LS,JSON.stringify(save));}catch(e){}}
-function lvst(uid){if(!save.levels[uid])save.levels[uid]={stars:0,best:0,clears:0};return save.levels[uid];}
+function blankUser(){return {coins:0,levels:{},best:0};}
+// root: {users:{name:{coins,levels,best}}, order:[name], muted, seeded}
+let root={users:{"我":blankUser(),"小明":blankUser(),"小红":blankUser()},
+  order:["我","小明","小红"],muted:false,seeded:true};
+try{
+  const r=localStorage.getItem(LS);
+  if(r){
+    const d=JSON.parse(r);
+    if(d.users){ // 多用户格式
+      root=Object.assign(root,d);
+      if(!root.order)root.order=Object.keys(root.users);
+    }else{ // 旧单用户格式 → 迁移为"我"，并补默认用户
+      root.users["我"]={coins:d.coins||0,levels:d.levels||{},best:d.best||0};
+      root.muted=!!d.muted;
+    }
+  }
+}catch(e){}
+// 旧档补种默认用户（只补一次）
+if(!root.seeded){
+  ["小明","小红"].forEach(n=>{if(!root.users[n]){root.users[n]=blankUser();root.order.push(n);}});
+  root.seeded=true;persist();
+}
+let curUser="我";
+if(!root.users[curUser])curUser=root.order[0]||"我";
+function save(){return root.users[curUser];}
+function persist(){try{localStorage.setItem(LS,JSON.stringify(root));}catch(e){}}
+function lvst(uid){const s=save();if(!s.levels[uid])s.levels[uid]={stars:0,best:0,clears:0};return s.levels[uid];}
+function peekst(uid){const s=save();return s.levels[uid]||{stars:0,best:0,clears:0};}
+function switchUser(name){
+  if(!root.users[name]||name===curUser)return;
+  curUser=name;persist();renderMap();
+}
 
 /* ================= 音效 ================= */
 let AC=null;
 function sfx(kind){
-  if(save.muted)return;
+  if(root.muted)return;
   try{
     AC=AC||new (window.AudioContext||window.webkitAudioContext)();
     const t=AC.currentTime;
@@ -3961,14 +3995,15 @@ ALLSCENES.forEach(s=>{
 const $=id=>document.getElementById(id);
 const rand=n=>Math.floor(Math.random()*n);
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=rand(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
-function starsOf(c){return lvst(c.uid).stars;}
+function starsOf(c){return peekst(c.uid).stars;}
 function sceneStars(scene){const arr=sceneLevels[scene.id];return arr.reduce((s,c)=>s+starsOf(c),0);}
 function sceneDone(arr){return arr.filter(c=>starsOf(c)>0).length;}
 
 /* ================= 地图渲染 ================= */
 let curScene=ALLSCENES[0];
 function renderMap(){
-  $("coins").textContent=save.coins;
+  $("coins").textContent=save().coins;
+  $("username").textContent=curUser;
   const total=CARDS.reduce((s,c)=>s+(starsOf(c)>0?1:0),0);
   $("map-title").textContent=`🏰 记忆宫殿 · 已征服 ${total}/${CARDS.length}`;
   const row=$("scene-row");row.innerHTML="";
@@ -4040,7 +4075,7 @@ function openTreasure(c){
   $("tbox").onclick=()=>{
     sfx("coin");
     const st=lvst(c.uid);const first=st.stars===0;
-    if(first){st.stars=3;save.coins+=100;st.clears++;persist();}
+    if(first){st.stars=3;save().coins+=100;st.clears++;persist();}
     $("tbox").className="treasure-open";$("tbox").textContent="🧧";
     showPanel(`<div class="big-emoji">🧧</div><h2>${c.name} · 学识宝箱</h2>
       ${first?'<p>首开得 🪙100 + ⭐⭐⭐</p>':"<p>已开启过（首次奖励已领）</p>"}
@@ -4196,7 +4231,7 @@ function victory(){
   const improved=s>st.stars;
   const earned=improved?(s-st.stars)*50:0;
   st.clears++;
-  if(improved){save.coins+=earned;st.stars=s;}
+  if(improved){save().coins+=earned;st.stars=s;}
   if(B.score>st.best)st.best=B.score;
   persist();
   $("monster").classList.add("die");sfx("winseq");confetti(46);
@@ -4235,10 +4270,63 @@ function confetti(n){
   }
 }
 
+/* ================= 用户管理 ================= */
+function userStats(name){
+  const u=root.users[name];
+  let stars=0,done=0;
+  CARDS.forEach(c=>{const l=u.levels[c.uid];if(l){stars+=l.stars||0;if(l.stars>0)done++;}});
+  return {stars,done,coins:u.coins||0};
+}
+function showUserPanel(){
+  sfx("pop");
+  const rows=root.order.map(n=>{
+    const st=userStats(n),cur=n===curUser;
+    return `<div class="opt" style="display:flex;justify-content:space-between;align-items:center;
+      ${cur?'border-color:#339af0;background:#e7f5ff':''}" data-u="${n}">
+      <span>${cur?'✅ ':''}${n}</span>
+      <span style="font-size:12px;color:#9b8871">⭐${st.stars} · 🪙${st.coins} · ${st.done}/${CARDS.length}
+      ${root.order.length>1?`<button class="btn-mini del" data-u="${n}" style="margin-left:6px">✕</button>`:''}</span>
+    </div>`;
+  }).join("");
+  showPanel(`<div class="big-emoji">👥</div><h2>选择用户</h2>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">${rows}</div>
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <input id="new-user-name" placeholder="新用户名字" maxlength="10"
+        style="flex:1;border:2px solid #e5d5b8;border-radius:12px;padding:10px 12px;font-size:15px;background:#fff">
+      <button class="btn blue" id="btn-add-user" style="margin:0">＋ 添加</button>
+    </div>
+    <p style="font-size:12px;margin-top:8px">每个用户有独立的金币、星级与关卡进度</p>
+    <button class="btn ghost" onclick="ui.closePanel()">关闭</button>`);
+  document.querySelectorAll("#overlay-root .opt").forEach(el=>{
+    el.onclick=()=>{const n=el.dataset.u;if(n!==curUser){switchUser(n);sfx("coin");}closePanel();};
+  });
+  document.querySelectorAll("#overlay-root .del").forEach(btn=>{
+    btn.onclick=e=>{
+      e.stopPropagation();
+      const n=btn.dataset.u;
+      if(root.order.length<=1)return;
+      if(!confirm(`删除用户「${n}」？其进度将清空！`))return;
+      delete root.users[n];
+      root.order=root.order.filter(x=>x!==n);
+      if(curUser===n)curUser=root.order[0];
+      persist();sfx("bad");showUserPanel();
+    };
+  });
+  $("btn-add-user").onclick=()=>{
+    const inp=$("new-user-name"),n=(inp.value||"").trim();
+    if(!n){inp.focus();return;}
+    if(root.users[n]){alert("名字已存在");return;}
+    root.users[n]={coins:0,levels:{},best:0};
+    root.order.push(n);
+    curUser=n;persist();sfx("coin");renderMap();showUserPanel();
+  };
+}
+$("btn-user").onclick=showUserPanel;
+
 /* ================= 顶部按钮 ================= */
 $("btn-flee").onclick=()=>{sfx("pop");ui.toMap();};
-$("btn-mute").onclick=()=>{save.muted=!save.muted;persist();$("btn-mute").textContent=save.muted?"🔇":"🔊";};
-$("btn-mute").textContent=save.muted?"🔇":"🔊";
+$("btn-mute").onclick=()=>{root.muted=!root.muted;persist();$("btn-mute").textContent=root.muted?"🔇":"🔊";};
+$("btn-mute").textContent=root.muted?"🔇":"🔊";
 $("btn-help").onclick=()=>{
   sfx("pop");
   showPanel(`<div class="big-emoji">📖</div><h2>玩法说明</h2>
