@@ -2,13 +2,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/save") return handleSave(request, env, url);
-    const resp = await env.ASSETS.fetch(request);
-    if (resp.status === 200 && (url.pathname === "/" || url.pathname === "/index.html")) {
-      const headers = new Headers(resp.headers);
-      headers.set("Cache-Control", "no-cache, must-revalidate");
-      return new Response(resp.body, { status: resp.status, headers });
-    }
-    return resp;
+    return env.ASSETS.fetch(request);
   },
 };
 
