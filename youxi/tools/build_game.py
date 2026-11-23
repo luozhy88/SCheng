@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """把 tools/gejue-data.json 注入模板，生成自包含的 gejue-game.html。"""
+import datetime
 import json
 from pathlib import Path
 
@@ -12,5 +13,8 @@ data_json = DATA.read_text(encoding="utf-8")
 html = TPL.read_text(encoding="utf-8")
 assert "__DATA_JSON__" in html, "模板缺少占位符"
 html = html.replace("__DATA_JSON__", data_json)
+version = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+assert "__VERSION__" in html, "模板缺少版本占位符"
+html = html.replace("__VERSION__", version)
 OUT.write_text(html, encoding="utf-8")
-print(f"written {OUT} ({OUT.stat().st_size} bytes)")
+print(f"written {OUT} ({OUT.stat().st_size} bytes) version {version}")

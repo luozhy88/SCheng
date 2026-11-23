@@ -2,7 +2,13 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/save") return handleSave(request, env, url);
-    return env.ASSETS.fetch(request);
+    const resp = await env.ASSETS.fetch(request);
+    if (resp.status === 200 && (url.pathname === "/" || url.pathname === "/index.html")) {
+      const headers = new Headers(resp.headers);
+      headers.set("Cache-Control", "no-cache, must-revalidate");
+      return new Response(resp.body, { status: resp.status, headers });
+    }
+    return resp;
   },
 };
 
@@ -21,7 +27,11 @@ const json = (obj, status = 200) =>
 async function handleSave(request, env, url) {
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
 
-  const key = url.searchParams.get("key") || "";
+  let body = null;
+  if (request.method === "POST") {
+    body = await request.json().catch(() => null);
+  }
+  const key = url.searchParams.get("key") || (body && body.key) || "";
   if (!/^[A-Za-z0-9_-]{2,64}$/.test(key)) return json({ error: "invalid key" }, 400);
 
   if (request.method === "GET") {
@@ -33,8 +43,7 @@ async function handleSave(request, env, url) {
   }
 
   if (request.method === "POST") {
-    const body = await request.json().catch(() => null);
-    if (!body || body.data === undefined || body.data === null) {
+    if (body.data === undefined || body.data === null) {
       return json({ error: "invalid body" }, 400);
     }
     const data = JSON.stringify(body.data);
