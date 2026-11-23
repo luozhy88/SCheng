@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>歌诀降魔传 · 记忆宫殿大冒险</title>
+<style>
+:root{
+  --ink:#2b2118; --paper:#fff8ec;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;user-select:none}
+html,body{height:100%}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  color:#fff; overflow:hidden; touch-action:manipulation;
+}
+#app{position:fixed;inset:0;overflow:hidden;transition:background 1s}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;animation:fadein .45s}
+@keyframes fadein{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:none}}
+.hidden{display:none!important}
+
+/* ---------- 地图 ---------- */
+#scr-map{background:linear-gradient(180deg,#7ec8ff 0%,#b8e2ff 45%,#ffe9c9 100%)}
+.cloud{position:absolute;font-size:44px;opacity:.85;animation:drift linear infinite;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(0,0,0,.08))}
+@keyframes drift{from{transform:translateX(-120px)}to{transform:translateX(110vw)}}
+.hud{display:flex;align-items:center;gap:10px;padding:14px 16px;z-index:5}
+.hud .coin{background:rgba(255,255,255,.85);color:#7a4b00;font-weight:700;border-radius:999px;padding:6px 14px;font-size:15px;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.hud .sp{flex:1}
+.iconbtn{width:42px;height:42px;border-radius:12px;border:none;background:rgba(255,255,255,.85);font-size:20px;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.map-title{text-align:center;color:#1d4e89;text-shadow:0 2px 0 #fff;font-size:26px;letter-spacing:3px;margin:2px 0 12px;z-index:5}
+.scene-row{display:flex;gap:12px;overflow-x:auto;padding:6px 16px 14px;z-index:5}
+.scene-row::-webkit-scrollbar{height:0}
+.scene-card{
+  flex:0 0 168px;background:var(--paper);border-radius:18px;padding:14px 12px;color:var(--ink);
+  box-shadow:0 6px 0 rgba(120,80,20,.25);cursor:pointer;transition:transform .15s;position:relative;
+}
+.scene-card:active{transform:scale(.95)}
+.scene-card .big{font-size:44px;text-align:center}
+.scene-card h3{text-align:center;font-size:16px;margin:6px 0 4px}
+.scene-bar{height:8px;background:#eadfc8;border-radius:4px;overflow:hidden;margin-top:8px}
+.scene-bar>div{height:100%;background:linear-gradient(90deg,#ffb703,#fb8500);border-radius:4px}
+.scene-card .cnt{text-align:center;font-size:11px;color:#9b8871;margin-top:4px}
+.scene-card.locked{filter:grayscale(.8);opacity:.75}
+.scene-card .lock{position:absolute;top:8px;right:10px;font-size:18px}
+
+#level-path{flex:1;overflow-y:auto;padding:10px 20px 40px;z-index:5}
+.lvl{display:flex;align-items:center;gap:12px;margin:0 auto 6px;background:rgba(255,255,255,.92);
+  border-radius:16px;padding:10px 14px;color:var(--ink);box-shadow:0 4px 0 rgba(120,80,20,.18);
+  cursor:pointer;max-width:480px;position:relative;transition:transform .15s}
+.lvl:active{transform:scale(.97)}
+.lvl .moji{font-size:34px;width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+  background:#ffe9c9;border-radius:14px;flex:0 0 auto}
+.lvl .info{flex:1;min-width:0}
+.lvl .nm{font-weight:700;font-size:16px}
+.lvl .anchor{font-size:12px;color:#9b8871;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lvl .stars{font-size:13px;letter-spacing:2px;white-space:nowrap}
+.lvl.locked{opacity:.55;filter:grayscale(.7)}
+.lvl.treasure .moji{background:#fff3b0}
+.path-line{width:4px;height:16px;background:rgba(255,255,255,.7);margin:0 auto;border-radius:2px}
+
+/* ---------- 战斗 ---------- */
+#scr-battle{display:flex;flex-direction:column}
+.arena{flex:1;position:relative;overflow:hidden}
+#arena-bg{position:absolute;inset:0;transition:background 1s}
+.bh-hud{display:flex;align-items:center;gap:8px;padding:12px 14px;position:relative;z-index:6}
+.hpwrap{flex:1;background:rgba(0,0,0,.35);border-radius:999px;height:20px;overflow:hidden;position:relative}
+.hpwrap>div{height:100%;background:linear-gradient(90deg,#ff5d5d,#ff9e00);width:100%;transition:width .35s;border-radius:999px}
+.hpwrap span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.hearts{font-size:18px;letter-spacing:1px;white-space:nowrap}
+.score{background:rgba(0,0,0,.35);border-radius:999px;padding:4px 12px;font-weight:800;font-size:15px;white-space:nowrap}
+.combo{position:absolute;top:64px;right:16px;font-size:22px;font-weight:900;color:#ffd166;
+  text-shadow:0 2px 0 rgba(0,0,0,.35);z-index:6;opacity:0;transform:scale(.5);transition:all .2s}
+.combo.on{opacity:1;transform:scale(1)}
+
+.monster-zone{position:absolute;top:6%;left:0;right:0;display:flex;flex-direction:column;align-items:center;z-index:4}
+#monster{font-size:88px;animation:bob 2.2s ease-in-out infinite;filter:drop-shadow(0 10px 8px rgba(0,0,0,.25));position:relative}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+#monster.hurt{animation:hurt .35s}
+@keyframes hurt{0%{transform:translateX(0)}25%{transform:translateX(-16px) scale(1.08)}50%{transform:translateX(12px)}75%{transform:translateX(-8px)}100%{transform:none}}
+#monster.die{animation:die 1s forwards}
+@keyframes die{0%{transform:scale(1);opacity:1}40%{transform:scale(1.25) rotate(10deg);opacity:.9}100%{transform:scale(0) rotate(180deg);opacity:0}}
+.mon-name{margin-top:6px;background:rgba(0,0,0,.45);border-radius:999px;padding:6px 18px;font-weight:800;font-size:17px}
+.mon-spot{font-size:12px;color:#ffe9c9;margin-top:5px;background:rgba(0,0,0,.3);padding:3px 12px;border-radius:999px}
+.taunt{margin-top:8px;background:#fff;color:var(--ink);border-radius:14px;padding:8px 14px;font-size:14px;
+  max-width:78%;text-align:center;box-shadow:0 3px 0 rgba(0,0,0,.15);position:relative;animation:pop .3s}
+.taunt:before{content:"";position:absolute;top:-8px;left:50%;margin-left:-8px;border:8px solid transparent;border-bottom-color:#fff;border-top:0}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+
+.slots{position:absolute;bottom:42%;left:0;right:0;display:flex;gap:8px;justify-content:center;z-index:5;flex-wrap:wrap;padding:0 12px}
+.slot{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.22);border:2px dashed rgba(255,255,255,.75);
+  display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;backdrop-filter:blur(2px)}
+.slot.fill{border-style:solid;background:#fff;color:#d1495b;animation:pop .25s}
+.bubble-field{position:absolute;inset:0;z-index:3}
+.bubble{
+  position:absolute;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:26px;font-weight:800;color:#234;background:radial-gradient(circle at 32% 30%,#ffffff,#cfe8ff 70%);
+  box-shadow:0 6px 10px rgba(0,20,60,.25), inset 0 -4px 6px rgba(80,140,220,.35);cursor:pointer;
+  animation:floaty ease-in-out infinite;
+}
+.bubble:active{transform:scale(.88)}
+.bubble.bad{animation:shake .35s;background:radial-gradient(circle at 32% 30%,#fff,#ffb3b3 70%)}
+.bubble.pop{animation:burst .3s forwards}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes burst{0%{transform:scale(1);opacity:1}100%{transform:scale(1.7);opacity:0}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.dmg{position:absolute;font-size:26px;font-weight:900;color:#ffd166;text-shadow:0 2px 0 rgba(0,0,0,.4);
+  animation:dmgup .8s forwards;z-index:7;pointer-events:none}
+@keyframes dmgup{from{transform:translateY(0);opacity:1}to{transform:translateY(-60px);opacity:0}}
+.shake-screen{animation:shs .4s}
+@keyframes shs{0%,100%{transform:translate(0)}20%{transform:translate(-9px,4px)}40%{transform:translate(8px,-5px)}60%{transform:translate(-6px,-3px)}80%{transform:translate(5px,4px)}}
+
+/* 方剂连击 */
+.overlay{position:absolute;inset:0;background:rgba(10,15,30,.72);z-index:20;display:flex;align-items:center;justify-content:center;padding:18px;animation:fadein .3s}
+.panel{background:var(--paper);color:var(--ink);border-radius:20px;padding:22px 20px;max-width:440px;width:100%;
+  box-shadow:0 10px 0 rgba(0,0,0,.25);text-align:center;animation:pop .35s}
+.panel h2{font-size:20px;margin-bottom:6px}
+.panel .q{font-size:17px;margin:12px 0 4px;font-weight:700}
+.panel .q b{color:#d1495b}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.opt{background:#fff;border:2px solid #e5d5b8;border-radius:14px;padding:14px 8px;font-size:15px;font-weight:700;
+  color:var(--ink);cursor:pointer;transition:transform .12s}
+.opt:active{transform:scale(.94)}
+.opt.right{background:#d8f5e3;border-color:#37b26c}
+.opt.wrong{background:#ffe1e1;border-color:#e05252;animation:shake .35s}
+.opt.dim{opacity:.4;pointer-events:none}
+.big-emoji{font-size:56px}
+.panel p{color:#7a6a55;font-size:14px;margin-top:6px}
+.btn{display:inline-block;border:none;border-radius:999px;padding:13px 30px;font-size:16px;font-weight:800;
+  cursor:pointer;margin:8px 4px 0;color:#fff;background:linear-gradient(180deg,#ff9e00,#fb8500);
+  box-shadow:0 4px 0 #b35c00;transition:transform .12s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #b35c00}
+.btn.blue{background:linear-gradient(180deg,#4dabf7,#339af0);box-shadow:0 4px 0 #1c6fb8}
+.btn.blue:active{box-shadow:0 1px 0 #1c6fb8}
+.btn.ghost{background:#e9dfc9;color:#7a6a55;box-shadow:0 4px 0 #c9b99a}
+.star-line{font-size:34px;letter-spacing:8px;margin:8px 0}
+.score-line{font-size:16px;color:#7a6a55}
+.score-line b{color:#d1495b;font-size:20px}
+
+/* 宝箱 */
+.treasure-box{font-size:90px;animation:bob 2s infinite;cursor:pointer}
+.treasure-open{font-size:90px;animation:pop .5s}
+
+/* 无尽 */
+#scr-endless{background:linear-gradient(180deg,#2b1055,#7597de)}
+
+/* Confetti */
+.confetti{position:absolute;width:12px;height:12px;top:-20px;z-index:30;animation:conf linear forwards;pointer-events:none}
+@keyframes conf{to{transform:translateY(110vh) rotate(720deg);opacity:.6}}
+
+.hint-toast{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);background:rgba(0,0,0,.6);
+  padding:10px 20px;border-radius:999px;font-size:14px;z-index:25;white-space:nowrap;animation:fadein .4s}
+.badge-new{position:absolute;top:-6px;left:-6px;background:#ff5d5d;color:#fff;font-size:10px;border-radius:999px;padding:2px 7px;font-weight:800}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- 地图 -->
+  <div class="screen" id="scr-map">
+    <div class="hud">
+      <div class="coin">🪙 <span id="coins">0</span></div>
+      <div class="sp"></div>
+      <button class="iconbtn" id="btn-mute" title="音效">🔊</button>
+      <button class="iconbtn" id="btn-help" title="玩法">❓</button>
+    </div>
+    <div class="map-title" id="map-title">🏰 记忆宫殿</div>
+    <div class="scene-row" id="scene-row"></div>
+    <div id="level-path"></div>
+  </div>
+
+  <!-- 关卡（战斗/宝箱共用） -->
+  <div class="screen hidden" id="scr-battle">
+    <div class="arena" id="arena">
+      <div id="arena-bg"></div>
+      <div class="bh-hud">
+        <button class="iconbtn" id="btn-flee">🏳️</button>
+        <div class="hpwrap"><div id="hp"></div><span id="hp-text"></span></div>
+        <div class="hearts" id="hearts"></div>
+        <div class="score" id="score">0</div>
+      </div>
+      <div class="combo" id="combo"></div>
+      <div class="monster-zone" id="mzone"></div>
+      <div class="slots" id="slots"></div>
+      <div class="bubble-field" id="bfield"></div>
+      <div id="overlay-root"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ================= 数据 ================= */
+const DATA = __DATA_JSON__;
+const CARDS = [];
+DATA.entries.forEach(e => e.sections.forEach((s,i)=>{
+  CARDS.push({uid:e.id+"::"+s.name+"::"+(s.jue||"")+"::"+i, entry:e.title,
+    name:s.name, anchor:s.anchor||"", jue:s.jue||"", formulas:s.formulas||[]});
+}));
+const seen=new Set();
+for(let i=CARDS.length-1;i>=0;i--){
+  const c=CARDS[i], k=c.name+"|"+c.anchor+"|"+c.jue+"|"+JSON.stringify(c.formulas);
+  if(seen.has(k))CARDS.splice(i,1);else seen.add(k);
+}
+
+/* ================= 存档 ================= */
+const LS="gejue-adventure-v1";
+let save={coins:0,levels:{},best:0,muted:false};
+try{const r=localStorage.getItem(LS);if(r)save=Object.assign(save,JSON.parse(r));}catch(e){}
+function persist(){try{localStorage.setItem(LS,JSON.stringify(save));}catch(e){}}
+function lvst(uid){if(!save.levels[uid])save.levels[uid]={stars:0,best:0,clears:0};return save.levels[uid];}
+
+/* ================= 音效 ================= */
+let AC=null;
+function sfx(kind){
+  if(save.muted)return;
+  try{
+    AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+    const t=AC.currentTime;
+    const notes={hit:[520,0.08,"square"],bad:[180,0.2,"sawtooth"],pop:[880,0.06,"sine"],
+      win:[523,0.09,"triangle"],coin:[1047,0.1,"sine"],heal:[660,0.15,"sine"]};
+    if(kind==="winseq"){[523,659,784,1047].forEach((f,i)=>tone(f,t+i*0.12,0.12,"triangle",0.22));return;}
+    if(kind==="lose"){[392,330,262].forEach((f,i)=>tone(f,t+i*0.16,0.16,"sawtooth",0.18));return;}
+    const n=notes[kind];if(n)tone(n[0],t,n[1],n[2],0.2);
+  }catch(e){}
+  function tone(f,st,d,type,g){const o=AC.createOscillator(),gn=AC.createGain();o.type=type;o.frequency.value=f;
+    gn.gain.setValueAtTime(g,st);gn.gain.exponentialRampToValueAtTime(0.001,st+d);
+    o.connect(gn);gn.connect(AC.destination);o.start(st);o.stop(st+d+0.02);}
+}
+
+/* ================= 场景 ================= */
+const SCENES=[
+ {id:"home",   name:"老家大院", icon:"🏠", bg:"linear-gradient(180deg,#ff9a76 0%,#ffc4a3 40%,#ffead0 100%)", test:a=>/老家/.test(a)},
+ {id:"hotel",  name:"亚朵酒店", icon:"🏨", bg:"linear-gradient(180deg,#1a2340 0%,#3b4a7a 55%,#8a76c9 100%)", test:a=>/亚朵|杭州|酒店/.test(a)},
+ {id:"campus", name:"乌大学",   icon:"🎓", bg:"linear-gradient(180deg,#5fb8ff 0%,#a5dcff 50%,#d8f5c9 100%)", test:a=>/大学|校园|邮局|宿舍|银行|办公楼|礼堂|食堂|商店|小学(?!.*老家)|中学/.test(a)},
+ {id:"lib",    name:"乌图书馆", icon:"📚", bg:"linear-gradient(180deg,#8d6e63 0%,#c9a989 55%,#f2dfc2 100%)", test:a=>/图书馆|书店/.test(a)},
+];
+const fallback={id:"wild",name:"秘境",icon:"🗺️",bg:"linear-gradient(180deg,#134e5e 0%,#2d7a8a 55%,#9be3c8 100%)",test:()=>true};
+const ALLSCENES=[...SCENES,fallback];
+function sceneOf(c){
+  for(const s of SCENES) if(s.test(c.anchor)) return s;
+  for(const s of SCENES) if(s.test(c.entry)) return s;
+  return fallback;
+}
+const sceneLevels={};
+ALLSCENES.forEach(s=>sceneLevels[s.id]=[]);
+CARDS.forEach(c=>sceneLevels[sceneOf(c).id].push(c));
+ALLSCENES.forEach(s=>{
+  const arr=sceneLevels[s.id];
+  arr.sort((a,b)=>(b.jue?1:0)-(a.jue?1:0) || a.name.localeCompare(b.name,"zh"));
+});
+
+/* ================= 工具 ================= */
+const $=id=>document.getElementById(id);
+const rand=n=>Math.floor(Math.random()*n);
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=rand(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+function starsOf(c){return lvst(c.uid).stars;}
+function sceneStars(scene){const arr=sceneLevels[scene.id];return arr.reduce((s,c)=>s+starsOf(c),0);}
+function sceneDone(arr){return arr.filter(c=>starsOf(c)>0).length;}
+
+/* ================= 地图渲染 ================= */
+let curScene=ALLSCENES[0];
+function renderMap(){
+  $("coins").textContent=save.coins;
+  const total=CARDS.reduce((s,c)=>s+(starsOf(c)>0?1:0),0);
+  $("map-title").textContent=`🏰 记忆宫殿 · 已征服 ${total}/${CARDS.length}`;
+  const row=$("scene-row");row.innerHTML="";
+  ALLSCENES.forEach(s=>{
+    const arr=sceneLevels[s.id];if(!arr.length)return;
+    const st=sceneStars(s),max=arr.length*3;
+    const done=sceneDone(arr),allDone=done===arr.length;
+    const d=document.createElement("div");
+    d.className="scene-card";
+    d.innerHTML=`<div class="big">${allDone?"🏆":s.icon}</div><h3>${s.name}</h3>
+      <div class="scene-bar"><div style="width:${max?Math.round(st/max*100):0}%"></div></div>
+      <div class="cnt">${allDone?"全部完成！":`已完成 ${done}/${arr.length}`} · ⭐${st}</div>`;
+    d.onclick=()=>{sfx("pop");curScene=s;renderLevels();};
+    row.appendChild(d);
+  });
+  renderLevels();
+  // 云
+  document.querySelectorAll(".cloud").forEach(e=>e.remove());
+  for(let i=0;i<4;i++){
+    const c=document.createElement("div");c.className="cloud";c.textContent="☁️";
+    c.style.top=(5+rand(30))+"%";c.style.animationDuration=(28+rand(30))+"s";
+    c.style.animationDelay=(-rand(30))+"s";c.style.fontSize=(30+rand(30))+"px";
+    $("scr-map").appendChild(c);
+  }
+  $("scr-map").style.background="linear-gradient(180deg,#7ec8ff 0%,#b8e2ff 45%,#ffe9c9 100%)";
+}
+function renderLevels(){
+  $("map-title").textContent=`${curScene.icon} ${curScene.name}`;
+  const box=$("level-path");box.innerHTML="";
+  const arr=sceneLevels[curScene.id];
+  arr.forEach((c,i)=>{
+    if(i>0){const l=document.createElement("div");l.className="path-line";box.appendChild(l);}
+    const st=starsOf(c);
+    const isTreasure=!c.jue;
+    const d=document.createElement("div");
+    d.className="lvl"+(isTreasure?" treasure":"");
+    const moji=isTreasure?"🎁":["👹","🐲","🦠","👻","🐍","🧟","🦂","🐙"][hash(c.uid)%8];
+    d.innerHTML=`<div class="moji">${moji}${!st?'<div class="badge-new">NEW</div>':""}</div>
+      <div class="info"><div class="nm">${c.name}</div>
+      <div class="anchor">📍 ${c.anchor||c.entry}</div></div>
+      <div class="stars">${"⭐".repeat(st)}${"☆".repeat(3-st)}</div>`;
+    d.onclick=()=>{sfx("pop");if(isTreasure)openTreasure(c);else startBattle(c);};
+    box.appendChild(d);
+  });
+  const back=document.createElement("div");
+  back.style.cssText="text-align:center;margin-top:16px";
+  back.innerHTML=`<button class="btn ghost" style="font-size:13px;padding:9px 20px">🏰 返回宫殿总览</button>`;
+  back.onclick=renderMap;
+  box.appendChild(back);
+}
+function hash(s){let h=0;for(const ch of s)h=(h*31+ch.codePointAt(0))>>>0;return h;}
+
+let toastTimer=null;
+function toast(msg){
+  document.querySelectorAll(".hint-toast").forEach(e=>e.remove());
+  const t=document.createElement("div");t.className="hint-toast";t.textContent=msg;
+  $("scr-map").appendChild(t);$("scr-battle").appendChild(t.cloneNode(true));
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>document.querySelectorAll(".hint-toast").forEach(e=>e.remove()),1600);
+}
+
+/* ================= 宝箱关 ================= */
+function openTreasure(c){
+  $("scr-map").classList.add("hidden");$("scr-battle").classList.remove("hidden");
+  $("arena-bg").style.background=curScene.bg;
+  $("mzone").innerHTML=`<div class="treasure-box" id="tbox">🎁</div>
+    <div class="mon-name">${c.name}</div><div class="mon-spot">📍 ${c.anchor||c.entry}</div>`;
+  $("slots").innerHTML="";$("bfield").innerHTML="";$("combo").className="combo";
+  $("hp").style.width="100%";$("hp-text").textContent="";$("hearts").textContent="";$("score").textContent="";
+  $("tbox").onclick=()=>{
+    sfx("coin");
+    const st=lvst(c.uid);const first=st.stars===0;
+    if(first){st.stars=3;save.coins+=100;st.clears++;persist();}
+    $("tbox").className="treasure-open";$("tbox").textContent="🧧";
+    showPanel(`<div class="big-emoji">🧧</div><h2>${c.name} · 学识宝箱</h2>
+      ${first?'<p>首开得 🪙100 + ⭐⭐⭐</p>':"<p>已开启过（首次奖励已领）</p>"}
+      <div style="text-align:left;margin-top:10px;max-height:40vh;overflow-y:auto">
+      ${c.formulas.map(f=>f.note?`<p>📜 ${f.note}</p>`:
+        `<p>💊 ${f.syndrome?f.syndrome+" → ":""}<b>${f.formula}</b>${f.hint?` <small>（${f.hint}）</small>`:""}</p>`).join("")||"<p>空空如也</p>"}
+      </div>
+      <button class="btn" onclick="ui.closePanel(true)">收入囊中</button>`);
+    confetti(20);
+  };
+}
+window.ui={};
+
+/* ================= 战斗 ================= */
+const TAUNTS=["哼，背得出我的歌诀吗？","本魔王驻守此地多年！","字泡里藏着我的弱点哦","快点快点，记不住吧～","一病一方，错不了我！"];
+let B=null;
+function startBattle(card){
+  $("scr-map").classList.add("hidden");$("scr-battle").classList.remove("hidden");
+  $("arena-bg").style.background=sceneOf(card).bg;
+  B={card, need:[...card.jue], next:0, hp:card.jue.length, maxhp:card.jue.length,
+     hearts:3, score:0, combo:0, wrong:0, t0:Date.now(), locked:false};
+  const moji=["👹","🐲","🦠","👻","🐍","🧟","🦂","🐙"][hash(card.uid)%8];
+  $("mzone").innerHTML=`<div id="monster">${moji}</div>
+    <div class="mon-name">${card.name} 大魔王</div>
+    <div class="mon-spot">📍 ${card.anchor||card.entry}</div>
+    <div class="taunt" id="taunt">${TAUNTS[rand(TAUNTS.length)]}</div>`;
+  $("score").textContent="0";
+  drawSlots();drawHearts();drawHP();spawnBubbles();
+  setTimeout(()=>toast("按顺序点破字泡，拼出歌诀！"),400);
+}
+function drawHP(){$("hp").style.width=(B.hp/B.maxhp*100)+"%";$("hp-text").textContent=`${B.hp}/${B.maxhp}`;}
+function drawHearts(){$("hearts").textContent="❤️".repeat(B.hearts)+"🖤".repeat(3-B.hearts);}
+function drawSlots(){
+  $("slots").innerHTML=B.need.map((ch,i)=>
+    `<div class="slot${i<B.next?" fill":""}">${i<B.next?ch:""}</div>`).join("");
+}
+function drawCombo(){
+  const el=$("combo");
+  if(B.combo>=2){el.textContent=`🔥 x${B.combo}`;el.className="combo on";}
+  else el.className="combo";
+}
+function spawnBubbles(){
+  const field=$("bfield");field.innerHTML="";
+  const chars=[...B.need];
+  const others=shuffle(CARDS.filter(c=>c.uid!==B.card.uid&&c.jue)).slice(0,4);
+  others.forEach(c=>chars.push([...c.jue][rand(c.jue.length)]));
+  shuffle(chars);
+  const W=Math.min(window.innerWidth,720);
+  chars.forEach((ch,i)=>{
+    const b=document.createElement("div");b.className="bubble";b.textContent=ch;
+    b.style.left=(6+((i*97)%(W-90))/W*100)+"%";
+    b.style.top=(46+((i*53)%38))+"%";
+    b.style.animationDuration=(2.2+ (i%5)*0.4)+"s";
+    b.style.animationDelay=(-(i%7)*0.3)+"s";
+    b.onclick=()=>tapBubble(b,ch);
+    field.appendChild(b);
+  });
+}
+function tapBubble(b,ch){
+  if(!B||B.locked)return;
+  if(ch===B.need[B.next]){
+    b.classList.add("pop");sfx("hit");
+    B.next++;B.hp--;B.combo++;
+    B.score+=100+B.combo*10;
+    $("score").textContent=B.score;
+    dmgPop(b,"⚔️"+(B.combo>1?"x"+B.combo:""));
+    const m=$("monster");m.classList.remove("hurt");void m.offsetWidth;m.classList.add("hurt");
+    drawSlots();drawHP();drawCombo();
+    if(B.next>=B.need.length){B.locked=true;setTimeout(formulaRound,450);}
+  }else{
+    b.classList.add("bad");sfx("bad");
+    B.combo=0;B.wrong++;drawCombo();
+    hurtPlayer();
+    setTimeout(()=>b.classList.remove("bad"),400);
+  }
+}
+function dmgPop(anchorEl,txt){
+  const r=anchorEl.getBoundingClientRect();
+  const d=document.createElement("div");d.className="dmg";d.textContent=txt;
+  d.style.left=(r.left+r.width/2-10)+"px";d.style.top=(r.top-8)+"px";
+  $("arena").appendChild(d);setTimeout(()=>d.remove(),800);
+}
+function hurtPlayer(){
+  B.hearts--;drawHearts();
+  $("scr-battle").classList.remove("shake-screen");void $("scr-battle").offsetWidth;
+  $("scr-battle").classList.add("shake-screen");
+  if(B.hearts<=0)defeat();
+  else toast2("💔 被反击了！小心干扰字");
+}
+let toast2t=null;
+function toast2(msg){
+  document.querySelectorAll(".hint-toast").forEach(e=>e.remove());
+  const t=document.createElement("div");t.className="hint-toast";t.textContent=msg;
+  $("scr-battle").appendChild(t);
+  clearTimeout(toast2t);toast2t=setTimeout(()=>t.remove(),1400);
+}
+
+/* ---- 方剂连击 ---- */
+function formulaRound(){
+  B.locked=true;
+  const fms=B.card.formulas.filter(f=>f.formula&&f.syndrome).slice(0,3);
+  if(!fms.length)return victory();
+  let i=0,gain=0;
+  ask();
+  function ask(){
+    if(i>=fms.length){
+      B.score+=0;sfx("heal");
+      showPanel(`<div class="big-emoji">💥</div><h2>歌诀破敌！</h2>
+        <p class="score-line">方剂连击 +<b>${gain}</b> 分</p>
+        <button class="btn" id="p-go">收下战利品</button>`);
+      $("p-go").onclick=victory;
+      return;
+    }
+    const f=fms[i];
+    const distractors=shuffle(CARDS.filter(c=>c.uid!==B.card.uid).map(c=>{
+        const cand=c.formulas.filter(x=>x.formula&&x.syndrome);return cand.length?cand[rand(cand.length)].formula:null;
+      }).filter(v=>v&&v!==f.formula)).filter((v,k,a)=>a.indexOf(v)===k).slice(0,3);
+    const pool=shuffle([f.formula,...distractors]);
+    const filler=["桃花汤","六君子汤","归脾汤","消风散","小青龙汤"];
+    while(pool.length<4){const v=filler[rand(filler.length)];if(!pool.includes(v))pool.push(v);}
+    shuffle(pool);
+    showPanel(`<h2>⚡ 方剂连击 ${i+1}/${fms.length}</h2>
+      <div class="q">【${B.card.jue}】之「<b>${f.hint||"?"}</b>」 —— <b>${f.syndrome}</b> 当用何方？</div>
+      <div class="opts">${pool.map(v=>`<button class="opt" data-v="${v}">${v}</button>`).join("")}</div>`);
+    document.querySelectorAll("#overlay-root .opt").forEach(b=>b.onclick=()=>{
+      if(b.dataset.v===f.formula){
+        b.classList.add("right");sfx("coin");gain+=150;B.score+=150;$("score").textContent=B.score;
+        if(B.hearts<3){B.hearts++;drawHearts();toast2("❤️ 回复 1 心");}
+        document.querySelectorAll("#overlay-root .opt").forEach(x=>{if(x!==b)x.classList.add("dim");});
+        setTimeout(()=>{i++;ask();},550);
+      }else{
+        b.classList.add("wrong");sfx("bad");B.combo=0;
+        document.querySelectorAll("#overlay-root .opt").forEach(x=>{
+          if(x.dataset.v===f.formula)x.classList.add("right");else if(x!==b)x.classList.add("dim");});
+        setTimeout(()=>{i++;ask();},900);
+      }
+    });
+  }
+}
+
+/* ---- 结算 ---- */
+function calcStars(){
+  const secs=(Date.now()-B.t0)/1000;
+  if(B.wrong===0&&secs<14+B.maxhp*4)return 3;
+  if(B.wrong<=1)return 2;
+  return 1;
+}
+function victory(){
+  const st=lvst(B.card.uid);
+  const s=calcStars();
+  const timeBonus=Math.max(0,300-Math.floor((Date.now()-B.t0)/1000)*5);
+  B.score+=timeBonus;
+  const improved=s>st.stars;
+  const earned=improved?(s-st.stars)*50:0;
+  st.clears++;
+  if(improved){save.coins+=earned;st.stars=s;}
+  if(B.score>st.best)st.best=B.score;
+  persist();
+  $("monster").classList.add("die");sfx("winseq");confetti(46);
+  setTimeout(()=>{
+    showPanel(`<div class="big-emoji">🏆</div><h2>${B.card.name} 已被征服！</h2>
+      <div class="star-line">${"⭐".repeat(s)}${"☆".repeat(3-s)}</div>
+      <p class="score-line">得分 <b>${B.score}</b>（含时间加成 ${timeBonus}）</p>
+      <p style="margin-top:8px">【${B.card.jue}】→ ${B.card.formulas.filter(f=>f.formula).map(f=>f.formula).slice(0,4).join(" / ")}</p>
+      ${earned?`<p>🪙 金币 +${earned}</p>`:""}
+      <button class="btn" onclick="ui.toMap()">🗺️ 返回地图</button>
+      <button class="btn blue" onclick="ui.retry()">🔁 再刷星级</button>`);
+  },900);
+}
+function defeat(){
+  B.locked=true;sfx("lose");
+  showPanel(`<div class="big-emoji">💀</div><h2>被 ${B.card.name} 大魔王击退了…</h2>
+    <p>别灰心！想想 📍${B.card.anchor||""} 的画面，再来一次！</p>
+    <button class="btn" onclick="ui.retry()">⚔️ 再次挑战</button>
+    <button class="btn ghost" onclick="ui.toMap()">🗺️ 回地图修炼</button>`);
+}
+ui.toMap=()=>{closePanel();$("scr-battle").classList.add("hidden");$("scr-map").classList.remove("hidden");renderMap();};
+ui.retry=()=>{const c=B.card;closePanel();startBattle(c);};
+ui.closePanel=(toMap)=>{closePanel();if(toMap)ui.toMap();};
+
+function showPanel(html){$("overlay-root").innerHTML=`<div class="overlay"><div class="panel">${html}</div></div>`;}
+function closePanel(){$("overlay-root").innerHTML="";}
+function confetti(n){
+  const cols=["#ff5d5d","#ffd166","#5dd39e","#4dabf7","#b197fc","#ff9e00"];
+  for(let i=0;i<n;i++){
+    const c=document.createElement("div");c.className="confetti";
+    c.style.left=rand(100)+"vw";c.style.background=cols[i%cols.length];
+    c.style.animationDuration=(1.4+Math.random()*1.6)+"s";
+    c.style.animationDelay=(Math.random()*0.5)+"s";
+    c.style.borderRadius=i%2?"50%":"2px";
+    $("arena").appendChild(c);setTimeout(()=>c.remove(),3400);
+  }
+}
+
+/* ================= 顶部按钮 ================= */
+$("btn-flee").onclick=()=>{sfx("pop");ui.toMap();};
+$("btn-mute").onclick=()=>{save.muted=!save.muted;persist();$("btn-mute").textContent=save.muted?"🔇":"🔊";};
+$("btn-mute").textContent=save.muted?"🔇":"🔊";
+$("btn-help").onclick=()=>{
+  sfx("pop");
+  showPanel(`<div class="big-emoji">📖</div><h2>玩法说明</h2>
+    <p style="text-align:left;line-height:1.9">
+    🗺️ 宫殿里有 ${CARDS.length} 个关卡，每个病魔守在它的记忆宫殿位置。<br>
+    ⚔️ <b>战斗</b>：按顺序点破字泡拼出歌诀，每字一击；点错会被反击扣 ❤️。<br>
+    💡 干扰字泡来自其他歌诀，认准你的联想画面！<br>
+    ⚡ 歌诀拼完进入<b>方剂连击</b>：答对回复 ❤️ 并加分。<br>
+    ⭐ 又快又准得 3 星；每关都可重复挑战刷星，全部完成场景得 🏆。<br>
+    🎁 宝箱关：点开即得学识与奖励。</p>
+    <button class="btn" onclick="ui.closePanel()">开玩！</button>`);
+};
+
+/* ================= 启动 ================= */
+renderMap();
+if(!localStorage.getItem(LS+"-seen")){
+  $("btn-help").click();
+  try{localStorage.setItem(LS+"-seen","1");}catch(e){}
+}
+</script>
+</body>
+</html>

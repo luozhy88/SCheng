@@ -1,0 +1,3709 @@
+{
+ "entries": [
+  {
+   "id": "月经先期无定期后期延期",
+   "title": "月经先期无定期后期延期",
+   "sections": [
+    {
+     "name": "月经先期",
+     "anchor": "楼梯箭头左边",
+     "jue": "不顾丹两清",
+     "formulas": [
+      {
+       "syndrome": "脾气虚",
+       "formula": "补中益气汤",
+       "hint": "补"
+      },
+      {
+       "syndrome": "肾气虚",
+       "formula": "固阴煎",
+       "hint": "固"
+      },
+      {
+       "syndrome": "肝郁血热",
+       "formula": "丹栀逍遥散",
+       "hint": "丹"
+      },
+      {
+       "syndrome": "阴虚血热",
+       "formula": "两地汤",
+       "hint": "两"
+      },
+      {
+       "syndrome": "阳盛血热",
+       "formula": "清经散",
+       "hint": "清"
+      }
+     ]
+    },
+    {
+     "name": "月经先后无定期",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "肾虚",
+       "formula": "固阴煎",
+       "hint": "银"
+      }
+     ]
+    },
+    {
+     "name": "月经后期",
+     "anchor": "老家楼房扶梯右边",
+     "jue": "武当打蚊",
+     "formulas": [
+      {
+       "syndrome": "",
+       "formula": "乌药汤"
+      },
+      {
+       "syndrome": "",
+       "formula": "当归地黄饮"
+      },
+      {
+       "syndrome": "",
+       "formula": "大补元煎"
+      },
+      {
+       "syndrome": "",
+       "formula": "温经汤"
+      },
+      {
+       "syndrome": "月经延长",
+       "formula": "举两屎",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚",
+       "formula": "举元煎",
+       "hint": null
+      },
+      {
+       "syndrome": "虚热",
+       "formula": "两地汤+二至丸",
+       "hint": null
+      },
+      {
+       "syndrome": "血瘀证",
+       "formula": "失笑散+桃红四物汤",
+       "hint": null
+      },
+      {
+       "note": "月经后期虚寒证:月经延后，量少，色淡红，质清稀，小腹隐痛，喜暖喜按;腰酸无力，小便清长，大便稀溏;舌淡，苔白，脉沉迟或细弱。"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "心脏瓣膜位置",
+   "title": "心脏瓣膜位置",
+   "sections": [
+    {
+     "name": "心脏瓣膜位置",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "上方：主动脉瓣右2和肺动脉瓣（左右对称）左2"
+      },
+      {
+       "note": "中间：主动脉瓣第二听诊区左3,4"
+      },
+      {
+       "note": "下方：三尖瓣左4,5】和二尖瓣左5"
+      },
+      {
+       "syndrome": "动脉导管未闭左2",
+       "formula": "连续性震颤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "产后发热身痛恶露不绝妊娠恶阻",
+   "title": "产后发热身痛恶露不绝妊娠恶阻",
+   "sections": [
+    {
+     "name": "产后发热",
+     "anchor": "老家豆腐脑大棚里面",
+     "jue": "58生金",
+     "formulas": [
+      {
+       "syndrome": "感染邪毒",
+       "formula": "五味消毒饮",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚",
+       "formula": "八珍汤",
+       "hint": null
+      },
+      {
+       "syndrome": "血瘀",
+       "formula": "生化汤",
+       "hint": null
+      },
+      {
+       "syndrome": "外感",
+       "formula": "荆防四物汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "产后身痛",
+     "anchor": "老家大棚里面",
+     "jue": "黄羊毒深",
+     "formulas": [
+      {
+       "syndrome": "血虚",
+       "formula": "黄芪桂枝五汤",
+       "hint": "黄"
+      },
+      {
+       "syndrome": "肾虚",
+       "formula": "养荣壮肾汤",
+       "hint": "羊"
+      },
+      {
+       "syndrome": "外感",
+       "formula": "独活寄生汤",
+       "hint": "独"
+      },
+      {
+       "syndrome": "血瘀",
+       "formula": "身痛逐瘀汤",
+       "hint": "深"
+      }
+     ]
+    },
+    {
+     "name": "产后恶露不绝",
+     "anchor": "老家小卖部门口的房沿",
+     "jue": "不保生",
+     "formulas": [
+      {
+       "syndrome": "气虚证",
+       "formula": "补中益气",
+       "hint": null
+      },
+      {
+       "syndrome": "血热证",
+       "formula": "保阴煎",
+       "hint": null
+      },
+      {
+       "syndrome": "血瘀证",
+       "formula": "生化汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "妊娠恶阻",
+     "anchor": "老家小卖部门口的房子",
+     "jue": "青橘香",
+     "formulas": [
+      {
+       "syndrome": "痰滞证",
+       "formula": "青竹茹汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝胃不和",
+       "formula": "橘皮竹茹汤清肝和胃降逆止呕",
+       "hint": null
+      },
+      {
+       "syndrome": "脾胃虚弱",
+       "formula": "香砂六君子汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "急慢惊风多动障碍",
+   "title": "急慢惊风多动障碍",
+   "sections": [
+    {
+     "name": "急惊风",
+     "anchor": "乌大学礼堂走廊右边",
+     "jue": "黄虎清银铃",
+     "formulas": [
+      {
+       "syndrome": "湿热疫毒",
+       "formula": "黄连解毒+白头翁汤",
+       "hint": "黄"
+      },
+      {
+       "syndrome": "惊恐惊风",
+       "formula": "琥珀抱龙丸",
+       "hint": "琥"
+      },
+      {
+       "syndrome": "气营两燔",
+       "formula": "清瘟败毒散",
+       "hint": "清"
+      },
+      {
+       "syndrome": "邪陷心肝",
+       "formula": "羚角钩藤汤",
+       "hint": "羚"
+      },
+      {
+       "syndrome": "风热动风",
+       "formula": "银翘散",
+       "hint": "银"
+      }
+     ]
+    },
+    {
+     "name": "慢惊风",
+     "anchor": "乌大学礼堂走廊右边",
+     "jue": "姑打环",
+     "formulas": [
+      {
+       "syndrome": "脾肾阳虚",
+       "formula": "固真汤+逐寒荡惊汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚动风",
+       "formula": "大定风珠",
+       "hint": null
+      },
+      {
+       "syndrome": "脾虚肝亢",
+       "formula": "缓肝理脾汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "注意缺陷多动障碍",
+     "anchor": "乌礼堂",
+     "jue": "鬼黄旗",
+     "formulas": [
+      {
+       "syndrome": "肝肾阴虚",
+       "formula": "杞菊地黄丸",
+       "hint": null
+      },
+      {
+       "syndrome": "心脾两虚",
+       "formula": "归脾汤+甘麦大枣汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰火内扰",
+       "formula": "黄连温胆汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "营养性缺铁性贫血",
+   "title": "营养性缺铁性贫血",
+   "sections": [
+    {
+     "name": "营养性缺铁性贫血",
+     "anchor": "乌图书馆一楼楼梯",
+     "jue": "六鬼左右",
+     "formulas": [
+      {
+       "syndrome": "脾胃虚弱",
+       "formula": "六君子汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心脾两虚",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝肾阴虚",
+       "formula": "左归丸",
+       "hint": null
+      },
+      {
+       "syndrome": "脾肾阳虚",
+       "formula": "右归丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "药毒",
+   "title": "药毒",
+   "sections": [
+    {
+     "name": "药毒",
+     "anchor": "老家与小学墙边",
+     "jue": "请赠笔",
+     "formulas": [
+      {
+       "syndrome": "热毒入营",
+       "formula": "清营汤",
+       "hint": null
+      },
+      {
+       "syndrome": "气阴两虚",
+       "formula": "增液汤+益胃汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿毒蕴肤",
+       "formula": "萆薢渗湿汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "吐血便血尿血郁证鼻衄齿衄咳血",
+   "title": "吐血便血尿血郁证鼻衄齿衄咳血",
+   "sections": [
+    {
+     "name": "吐血",
+     "anchor": "杭州亚朵酒店，电梯门口",
+     "jue": "龙跪谢",
+     "formulas": [
+      {
+       "syndrome": "肝火犯胃",
+       "formula": "龙胆泻肝汤",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚血溢",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "胃热壅盛",
+       "formula": "泻心汤+十灰散",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "便血",
+     "anchor": "杭州亚朵酒店，电梯门口",
+     "jue": "谢鬼皇帝",
+     "formulas": [
+      {
+       "syndrome": "热灼胃络证",
+       "formula": "泻心汤合十灰散",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚不摄",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "脾胃虚寒",
+       "formula": "黄土汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肠道湿热",
+       "formula": "地榆散+槐角丸",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "尿血",
+     "anchor": "杭州亚朵酒店，电梯门口最里面撒尿血",
+     "jue": "无知小鬼",
+     "formulas": [
+      {
+       "syndrome": "肾气不固",
+       "formula": "无比山药丸",
+       "hint": null
+      },
+      {
+       "syndrome": "肾虚火旺",
+       "formula": "知柏地黄丸",
+       "hint": null
+      },
+      {
+       "syndrome": "下焦湿热",
+       "formula": "小蓟饮子",
+       "hint": null
+      },
+      {
+       "syndrome": "脾不统血",
+       "formula": "归脾汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "郁证",
+     "anchor": "亚朵酒店一楼电梯口玻璃",
+     "jue": "班干丹归天",
+     "formulas": [
+      {
+       "syndrome": "肝气郁结",
+       "formula": "柴胡疏肝散",
+       "hint": null
+      },
+      {
+       "syndrome": "痰气郁结",
+       "formula": "半夏厚朴汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心神失养",
+       "formula": "甘麦大枣汤",
+       "hint": null
+      },
+      {
+       "syndrome": "气郁化火",
+       "formula": "丹栀逍遥散",
+       "hint": null
+      },
+      {
+       "syndrome": "心脾两虚",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心肾阴虚",
+       "formula": "天王补心丹合六味地黄丸",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "鼻衄",
+     "anchor": "亚朵酒店电梯口对面墙",
+     "jue": "玉龙嗓贵",
+     "formulas": [
+      {
+       "syndrome": "胃热炽盛",
+       "formula": "玉女煎",
+       "hint": null
+      },
+      {
+       "syndrome": "肝火上炎",
+       "formula": "龙胆泽泻汤",
+       "hint": null
+      },
+      {
+       "syndrome": "热邪犯肺",
+       "formula": "桑菊饮",
+       "hint": null
+      },
+      {
+       "syndrome": "气血亏虚",
+       "formula": "归脾汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "齿衄",
+     "anchor": "亚朵酒店电梯口对面墙",
+     "jue": "写6",
+     "formulas": [
+      {
+       "syndrome": "胃火炽盛",
+       "formula": "泻心汤合加味清胃散",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚火旺",
+       "formula": "六味地黄合茜根散",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "咳血",
+     "anchor": "亚朵酒店一楼电梯里面",
+     "jue": "写白嗓",
+     "formulas": [
+      {
+       "syndrome": "肝火犯肺",
+       "formula": "泻白散合黛蛤散",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚肺热",
+       "formula": "百合固金汤",
+       "hint": null
+      },
+      {
+       "syndrome": "燥热伤肺",
+       "formula": "桑杏汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "痹证腰痛痿证",
+   "title": "痹证腰痛痿证",
+   "sections": [
+    {
+     "name": "痹证",
+     "anchor": "乌图书馆一楼电脑桌旁墙面上，双房屋桂,赌一百,慌",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "痰瘀痹阻",
+       "formula": "双合汤化痰又活血",
+       "hint": null
+      },
+      {
+       "syndrome": "行痹",
+       "formula": "防风汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痛痹",
+       "formula": "乌头汤",
+       "hint": null
+      },
+      {
+       "syndrome": "寒热错杂",
+       "formula": "桂枝芍药知母汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝肾亏虚",
+       "formula": "独活寄生汤",
+       "hint": null
+      },
+      {
+       "syndrome": "着痹风寒湿",
+       "formula": "薏苡仁汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风湿热痹",
+       "formula": "白虎加桂枝汤",
+       "hint": null
+      },
+      {
+       "syndrome": "气血虚痹",
+       "formula": "黄芪桂枝五物汤",
+       "hint": null
+      },
+      {
+       "note": "着痹以感受湿邪为主,湿性重浊,故而患者见关节酸痛、重着、眉伸不利"
+      }
+     ]
+    },
+    {
+     "name": "腰痛",
+     "anchor": "乌图书馆里面最左面最后一排",
+     "jue": "赶左右死神",
+     "formulas": [
+      {
+       "syndrome": "寒湿腰痛",
+       "formula": "甘姜苓术汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肾阴虚",
+       "formula": "左归丸",
+       "hint": null
+      },
+      {
+       "syndrome": "肾阳虚",
+       "formula": "右归丸",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热腰痛",
+       "formula": "四妙丸",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀血腰痛",
+       "formula": "身痛逐瘀汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "痿证",
+     "anchor": "乌图书馆一楼玻璃门后",
+     "jue": "请二虎补补",
+     "formulas": [
+      {
+       "syndrome": "肺热津伤",
+       "formula": "清燥救肺汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热浸淫",
+       "formula": "加味二妙散",
+       "hint": null
+      },
+      {
+       "syndrome": "肝肾亏损",
+       "formula": "虎潜丸",
+       "hint": null
+      },
+      {
+       "syndrome": "脾胃虚弱",
+       "formula": "补中益气汤合参苓白术散",
+       "hint": null
+      },
+      {
+       "syndrome": "脉络瘀阻",
+       "formula": "补阳还五汤合圣愈汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "紫癜紫斑内伤发热",
+   "title": "紫癜紫斑内伤发热",
+   "sections": [
+    {
+     "name": "紫癜",
+     "anchor": "乌大学门口左边,鬼数钱",
+     "jue": "鬼吸银纸",
+     "formulas": [
+      {
+       "syndrome": "阴虚火旺",
+       "formula": "茜根散",
+       "hint": null
+      },
+      {
+       "syndrome": "血热妄行",
+       "formula": "十灰散",
+       "hint": null
+      },
+      {
+       "syndrome": "气不摄血",
+       "formula": "归脾汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "小于1公分",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "气不摄血",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "血热妄行",
+       "formula": "犀角地黄汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风热伤络",
+       "formula": "银翘散",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚火旺",
+       "formula": "知柏地黄丸",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "内伤发热",
+     "anchor": "乌大学商店门口",
+     "jue": "鬼清黄血补金丹",
+     "formulas": [
+      {
+       "syndrome": "血虚",
+       "formula": "归脾丸",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚",
+       "formula": "清骨散",
+       "hint": null
+      },
+      {
+       "syndrome": "痰湿郁热",
+       "formula": "黄连温胆汤合中和汤",
+       "hint": null
+      },
+      {
+       "syndrome": "血瘀发热",
+       "formula": "血府逐瘀汤",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚",
+       "formula": "补中益气汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阳虚",
+       "formula": "金匮肾气丸",
+       "hint": null
+      },
+      {
+       "syndrome": "气郁",
+       "formula": "丹栀逍遥散",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "头痛痫病眩晕痴呆中风",
+   "title": "头痛痫病眩晕痴呆中风",
+   "sections": [
+    {
+     "name": "头痛",
+     "anchor": "亚朵酒店二楼健身房座椅",
+     "jue": "穿胸腔大家同意半天",
+     "formulas": [
+      {
+       "syndrome": "风寒",
+       "formula": "川穹茶调散",
+       "hint": null
+      },
+      {
+       "syndrome": "风热",
+       "formula": "穹芷石膏汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风湿",
+       "formula": "羌活胜湿汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肾虚头痛",
+       "formula": "大补元煎",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚头痛",
+       "formula": "加味四物汤",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀血头痛",
+       "formula": "通窍活血汤",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚头痛",
+       "formula": "益气聪明汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰浊头痛",
+       "formula": "半夏白术天麻汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝阳头痛",
+       "formula": "天麻钩藤饮",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "痫病",
+     "anchor": "亚朵酒店二楼健身房进门右边",
+     "jue": "笼统定做6",
+     "formulas": [
+      {
+       "syndrome": "痰火扰神",
+       "formula": "龙胆泽泻汤+涤痰汤",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀阻脑络",
+       "formula": "通窍活血汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风痰痹阻",
+       "formula": "定痫丸",
+       "hint": null
+      },
+      {
+       "syndrome": "心肾亏虚",
+       "formula": "左归丸+天王补心丹",
+       "hint": null
+      },
+      {
+       "syndrome": "心脾两虚",
+       "formula": "六君子汤+归脾汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "眩晕",
+     "anchor": "杭州亚朵酒店二楼健身房里面",
+     "jue": "拌同坐归天",
+     "formulas": [
+      {
+       "syndrome": "痰浊上蒙",
+       "formula": "半夏白术天麻汤",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀血阻滞",
+       "formula": "通窍活血汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肾精不足",
+       "formula": "左归丸",
+       "hint": null
+      },
+      {
+       "syndrome": "气血亏虚",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝阳上亢",
+       "formula": "天麻钩藤饮",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "痴呆",
+     "anchor": "亚朵酒店二楼健身房门口",
+     "jue": "黄天洗7桶归还",
+     "formulas": [
+      {
+       "syndrome": "热毒内盛证",
+       "formula": "黄连解毒汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心肝火旺",
+       "formula": "天麻钩藤饮",
+       "hint": null
+      },
+      {
+       "syndrome": "痰浊蒙窍证",
+       "formula": "洗心汤",
+       "hint": null
+      },
+      {
+       "syndrome": "髓海不足证",
+       "formula": "7福饮",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀阻脑络证",
+       "formula": "通窍活血汤",
+       "hint": null
+      },
+      {
+       "syndrome": "气血不足证",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "脾肾亏虚证",
+       "formula": "还少丹",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "中风",
+     "anchor": "亚朵酒店健身房电梯门口",
+     "jue": "扮天真神界领地不做",
+     "formulas": [
+      {
+       "syndrome": "风痰入络证",
+       "formula": "半夏白术天麻汤合桃仁红花煎",
+       "hint": null
+      },
+      {
+       "syndrome": "风阳上扰证",
+       "formula": "天麻钩藤饮",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚动风证",
+       "formula": "镇肝息风汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阴竭阳亡",
+       "formula": "参附汤合生脉散",
+       "hint": null
+      },
+      {
+       "syndrome": "风痰瘀阻证",
+       "formula": "解语丹",
+       "hint": null
+      },
+      {
+       "syndrome": "阳闭证",
+       "formula": "羚角钩藤汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阴闭证",
+       "formula": "涤痰汤合苏合香丸",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚络瘀证",
+       "formula": "补阳还五汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝肾亏虚证",
+       "formula": "左归丸合地黄饮子",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "黄疸",
+   "title": "黄疸",
+   "sections": [
+    {
+     "name": "黄疸",
+     "anchor": "乌邮局对面打印点大门口",
+     "jue": "因大雾小斯洗煮黄柴",
+     "formulas": [
+      {
+       "syndrome": "热重于湿",
+       "formula": "茵陈蒿汤",
+       "hint": "因"
+      },
+      {
+       "syndrome": "胆腑郁热",
+       "formula": "大柴胡汤",
+       "hint": "大"
+      },
+      {
+       "syndrome": "湿重于热",
+       "formula": "茵陈五苓散+甘露消毒丹",
+       "hint": "雾"
+      },
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "逍遥散+鳖甲煎丸",
+       "hint": "小"
+      },
+      {
+       "syndrome": "湿热留恋",
+       "formula": "茵陈四苓散",
+       "hint": "斯"
+      },
+      {
+       "syndrome": "疫毒炽盛",
+       "formula": "犀角地黄汤",
+       "hint": null
+      },
+      {
+       "syndrome": "寒湿阻滞",
+       "formula": "茵陈术附汤",
+       "hint": "煮"
+      },
+      {
+       "syndrome": "脾虚湿滞",
+       "formula": "黄芪建中汤",
+       "hint": "黄"
+      },
+      {
+       "syndrome": "肝脾不调",
+       "formula": "柴胡疏肝散或当归六君子汤",
+       "hint": "柴"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "胎漏胎动不安滑胎",
+   "title": "胎漏胎动不安滑胎",
+   "sections": [
+    {
+     "name": "胎漏胎动不安滑胎",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "胎漏：仅有阴道少量出血，无痛感"
+      },
+      {
+       "note": "胎动不安：阴道出血加上腰酸、腹痛或小腹下坠感"
+      },
+      {
+       "note": "滑胎：反复发生的流产"
+      }
+     ]
+    },
+    {
+     "name": "胎漏胎动不安",
+     "anchor": "小学门口斜对面小卖部",
+     "jue": "圣手保鬼胎",
+     "formulas": [
+      {
+       "syndrome": "跌仆伤胎",
+       "formula": "圣愈汤+寿胎丸;补气和血，安胎",
+       "hint": null
+      },
+      {
+       "syndrome": "肾虚",
+       "formula": "寿胎丸",
+       "hint": null
+      },
+      {
+       "syndrome": "血热",
+       "formula": "保阴煎",
+       "hint": null
+      },
+      {
+       "syndrome": "症瘕伤胎证",
+       "formula": "桂枝茯苓丸+寿胎丸",
+       "hint": null
+      },
+      {
+       "syndrome": "气血虚弱",
+       "formula": "胎元饮",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "滑胎",
+     "anchor": "老家小学门口小卖部",
+     "jue": "补肾与保鬼胎",
+     "formulas": [
+      {
+       "syndrome": "肾气不足",
+       "formula": "补肾固冲丸",
+       "hint": "补"
+      },
+      {
+       "syndrome": "肾阳虚",
+       "formula": "肾气丸+寿胎丸",
+       "hint": "肾"
+      },
+      {
+       "syndrome": "肾精亏虚",
+       "formula": "育阴汤",
+       "hint": "与"
+      },
+      {
+       "syndrome": "血热",
+       "formula": "保阴煎",
+       "hint": "保"
+      },
+      {
+       "syndrome": "血瘀",
+       "formula": "桂枝茯苓丸",
+       "hint": "桂"
+      },
+      {
+       "syndrome": "气血虚弱",
+       "formula": "泰山磐石散",
+       "hint": "泰"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "心悸胸痹不寐",
+   "title": "心悸胸痹不寐",
+   "sections": [
+    {
+     "name": "心悸",
+     "anchor": "杭州亚朵酒店门口正对门",
+     "jue": "桂林安跪舔黄桃",
+     "formulas": [
+      {
+       "syndrome": "心阳不振",
+       "formula": "桂枝龙骨牡蛎汤+参附汤",
+       "hint": "桂"
+      },
+      {
+       "syndrome": "水饮凌心",
+       "formula": "苓桂术甘汤",
+       "hint": "苓"
+      },
+      {
+       "syndrome": "心虚胆怯",
+       "formula": "安神定志丸",
+       "hint": "安"
+      },
+      {
+       "syndrome": "心血不足",
+       "formula": "归脾汤",
+       "hint": "跪"
+      },
+      {
+       "syndrome": "阴虚火旺",
+       "formula": "天王补心丹+朱砂安神丸",
+       "hint": "天"
+      },
+      {
+       "syndrome": "痰火扰心",
+       "formula": "黄连温胆汤",
+       "hint": "黄"
+      },
+      {
+       "syndrome": "瘀阻心脉",
+       "formula": "桃仁红花煎",
+       "hint": "桃"
+      }
+     ]
+    },
+    {
+     "name": "胸痹",
+     "anchor": "杭州亚朵酒店门口右侧",
+     "jue": "柴天佑只生血瓜",
+     "formulas": [
+      {
+       "syndrome": "气滞心胸",
+       "formula": "柴胡疏肝散",
+       "hint": "柴"
+      },
+      {
+       "syndrome": "心肾阴虚",
+       "formula": "天王补心丹",
+       "hint": "天"
+      },
+      {
+       "syndrome": "心肾阳虚",
+       "formula": "右归丸+参附汤",
+       "hint": "右"
+      },
+      {
+       "syndrome": "寒凝心脉",
+       "formula": "枳实薤白桂枝汤+当归四逆汤",
+       "hint": "只"
+      },
+      {
+       "syndrome": "气阴两虚",
+       "formula": "生脉散+人参养荣汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心血瘀阻",
+       "formula": "血府逐瘀汤",
+       "hint": "血"
+      },
+      {
+       "syndrome": "痰浊闭阻",
+       "formula": "瓜蒌薤白桂枝汤+涤痰汤",
+       "hint": "瓜"
+      },
+      {
+       "syndrome": "气阴两虚",
+       "formula": "心胸隐痛，时作时休，心悸气短，动则益甚，伴乏力，舌淡红边齿痕苔白，脉虚细缓或结代脉。",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "不寐",
+     "anchor": "亚朵酒店停车位",
+     "jue": "六黄龙跪安",
+     "formulas": [
+      {
+       "syndrome": "心肾不交",
+       "formula": "六味地黄+交泰丸",
+       "hint": null
+      },
+      {
+       "syndrome": "痰热扰心",
+       "formula": "黄连温胆汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝火扰心",
+       "formula": "龙胆泻肝汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心脾两虚",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心胆气虚",
+       "formula": "安神定志丸+酸枣仁汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "紫癜紫斑",
+   "title": "紫癜紫斑",
+   "sections": [
+    {
+     "name": "紫癜",
+     "anchor": "乌大学门口左边,鬼数钱",
+     "jue": "鬼吸银纸",
+     "formulas": [
+      {
+       "syndrome": "阴虚火旺",
+       "formula": "茜根散",
+       "hint": null
+      },
+      {
+       "syndrome": "血热妄行",
+       "formula": "十灰散",
+       "hint": null
+      },
+      {
+       "syndrome": "气不摄血",
+       "formula": "归脾汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "小于1公分",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "气不摄血",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "血热妄行",
+       "formula": "犀角地黄汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风热伤络",
+       "formula": "银翘散",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚火旺",
+       "formula": "知柏地黄丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "痢疾便秘小儿腹泻腹痛",
+   "title": "痢疾便秘小儿腹泻腹痛",
+   "sections": [
+    {
+     "name": "痢疾",
+     "anchor": "乌大学邮局门口",
+     "jue": "桃主脸白不少",
+     "formulas": [
+      {
+       "syndrome": "虚寒痢疾",
+       "formula": "桃花汤+真人养脏汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚痢疾",
+       "formula": "驻车丸",
+       "hint": null
+      },
+      {
+       "syndrome": "休息痢",
+       "formula": "连理汤",
+       "hint": null
+      },
+      {
+       "syndrome": "疫毒痢疾",
+       "formula": "白头翁汤",
+       "hint": null
+      },
+      {
+       "syndrome": "寒湿痢疾",
+       "formula": "不换金正气散",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热痢疾",
+       "formula": "芍药汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "便秘",
+     "anchor": "乌大学邮局门口",
+     "jue": "黄马6赠祭文润",
+     "formulas": [
+      {
+       "syndrome": "气虚秘",
+       "formula": "黄芪汤",
+       "hint": null
+      },
+      {
+       "syndrome": "热秘",
+       "formula": "麻子仁丸",
+       "hint": null
+      },
+      {
+       "syndrome": "气秘",
+       "formula": "六磨汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚秘",
+       "formula": "增液汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阳虚秘",
+       "formula": "济川煎肾阳虚",
+       "hint": null
+      },
+      {
+       "syndrome": "冷秘",
+       "formula": "温脾汤脾阳虚",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚秘",
+       "formula": "润肠丸",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "小儿腹泻",
+     "anchor": "乌大学邮局门口",
+     "jue": "武夫保葛生藿神",
+     "formulas": [
+      {
+       "syndrome": "气阴两伤",
+       "formula": "人参乌梅汤",
+       "hint": "乌"
+      },
+      {
+       "syndrome": "脾肾阳虚",
+       "formula": "附子理中丸+四神丸",
+       "hint": "附"
+      },
+      {
+       "syndrome": "伤食泄泻",
+       "formula": "保和丸",
+       "hint": "保"
+      },
+      {
+       "syndrome": "湿热泄泻",
+       "formula": "葛芩连汤",
+       "hint": "葛"
+      },
+      {
+       "syndrome": "阴竭阳脱",
+       "formula": "生脉散+参附龙骨牡蛎汤",
+       "hint": "生"
+      },
+      {
+       "syndrome": "风寒泄泻",
+       "formula": "藿香正气散",
+       "hint": "藿"
+      },
+      {
+       "syndrome": "脾虚泄泻",
+       "formula": "参苓白术散",
+       "hint": "参"
+      },
+      {
+       "note": "大人泄泻（肝气乘脾-痛泻要方;肾阳虚衰-四神丸）"
+      }
+     ]
+    },
+    {
+     "name": "腹痛",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "柴大小少两指乌邮局里面柜台里面"
+      },
+      {
+       "syndrome": "肝郁气滞",
+       "formula": "柴胡疏肝散",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热瘀滞",
+       "formula": "大承气汤",
+       "hint": null
+      },
+      {
+       "syndrome": "虚寒证",
+       "formula": "小建中汤",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀血内停",
+       "formula": "少腹逐瘀汤",
+       "hint": null
+      },
+      {
+       "syndrome": "寒邪内阻",
+       "formula": "良附丸+正气天香散",
+       "hint": null
+      },
+      {
+       "syndrome": "饮食积滞",
+       "formula": "枳实导滞丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "水肿鼓胀淋证遗尿",
+   "title": "水肿鼓胀淋证遗尿",
+   "sections": [
+    {
+     "name": "水肿",
+     "anchor": "乌大学邮局ATM前面",
+     "jue": "妈约武术师击涛",
+     "formulas": [
+      {
+       "syndrome": "湿毒浸淫",
+       "formula": "麻黄连翘赤小豆+五味消毒饮",
+       "hint": "妈"
+      },
+      {
+       "syndrome": "风水相博",
+       "formula": "越婢加术",
+       "hint": "约"
+      },
+      {
+       "syndrome": "水湿浸渍",
+       "formula": "五皮饮+胃苓汤",
+       "hint": "武"
+      },
+      {
+       "syndrome": "湿热壅盛",
+       "formula": "疏凿饮子",
+       "hint": "术"
+      },
+      {
+       "syndrome": "脾阳虚衰",
+       "formula": "实脾饮",
+       "hint": "师"
+      },
+      {
+       "syndrome": "肾阳虚衰",
+       "formula": "济生肾气丸+真武汤",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀水互结",
+       "formula": "桃红四物汤+五苓散",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "鼓胀",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "拆六中条幅实时乌邮局后面ATM机器"
+      },
+      {
+       "note": "腹部胀大为主，四肢肿不明显"
+      },
+      {
+       "syndrome": "气滞湿阻",
+       "formula": "柴胡疏肝散+胃苓汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚水停",
+       "formula": "六味地黄丸+一贯煎",
+       "hint": null
+      },
+      {
+       "syndrome": "水热蕴结",
+       "formula": "中满分消丸+茵陈蒿汤",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀结水留",
+       "formula": "调营饮",
+       "hint": null
+      },
+      {
+       "syndrome": "阳虚水盛",
+       "formula": "附子理苓汤或济生肾气丸",
+       "hint": null
+      },
+      {
+       "syndrome": "水湿困脾",
+       "formula": "实脾饮",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "淋证",
+     "anchor": "乌校园内ATM西边",
+     "jue": "八小时务必沉",
+     "formulas": [
+      {
+       "syndrome": "热淋",
+       "formula": "八正散",
+       "hint": null
+      },
+      {
+       "syndrome": "血淋",
+       "formula": "小蓟饮子",
+       "hint": null
+      },
+      {
+       "syndrome": "石淋",
+       "formula": "石韦散",
+       "hint": null
+      },
+      {
+       "syndrome": "劳淋",
+       "formula": "无比山药丸",
+       "hint": null
+      },
+      {
+       "syndrome": "膏淋",
+       "formula": "萆薢分清饮",
+       "hint": null
+      },
+      {
+       "syndrome": "气淋",
+       "formula": "沉香散",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "遗尿",
+     "anchor": "乌校园邮局背面小男孩尿",
+     "jue": "琐兔",
+     "formulas": [
+      {
+       "syndrome": "肾气不足",
+       "formula": "菟丝子散",
+       "hint": null
+      },
+      {
+       "syndrome": "肺脾气虚",
+       "formula": "缩泉丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "肺炎喘嗽感冒",
+   "title": "肺炎喘嗽感冒",
+   "sections": [
+    {
+     "name": "肺炎喘嗽",
+     "anchor": "邮局旁边宿舍楼外面走道",
+     "jue": "黄花牛沙人妈挺身",
+     "formulas": [
+      {
+       "syndrome": "毒热闭肺",
+       "formula": "黄连解毒汤+麻杏石甘汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风寒闭肺",
+       "formula": "华盖散",
+       "hint": null
+      },
+      {
+       "syndrome": "邪陷厥阴",
+       "formula": "牛黄清心丸+羚角钩藤汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚肺热",
+       "formula": "沙参麦冬汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肺脾气虚",
+       "formula": "人参五味子汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风热闭肺",
+       "formula": "麻杏石甘汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰热闭肺",
+       "formula": "葶苈大枣泻肺汤+麻杏石甘汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心阳虚衰",
+       "formula": "参附龙骨牡蛎救逆汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "感冒",
+     "anchor": "乌大学邮局旁宿舍墙边",
+     "jue": "新参加金银",
+     "formulas": [
+      {
+       "syndrome": "暑湿伤表",
+       "formula": "新加香薷饮",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚感冒",
+       "formula": "参苏饮",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚感冒",
+       "formula": "加减葳蕤汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风寒感冒",
+       "formula": "荆防达表汤轻或荆防败毒散",
+       "hint": null
+      },
+      {
+       "syndrome": "风热犯表",
+       "formula": "银翘散",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "积滞",
+   "title": "积滞",
+   "sections": [
+    {
+     "name": "积滞",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "乳食内积证",
+       "formula": "消乳丸或保和丸",
+       "hint": null
+      },
+      {
+       "syndrome": "脾虚夹积",
+       "formula": "健脾丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "癥瘕",
+   "title": "癥瘕",
+   "sections": [
+    {
+     "name": "癥瘕",
+     "anchor": "大木罗东小卖部里面保险柜",
+     "jue": "藏象大补",
+     "formulas": [
+      {
+       "syndrome": "痰湿瘀结",
+       "formula": "苍附导痰丸+桂枝茯苓丸",
+       "hint": null
+      },
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "香棱丸或大黄蛰虫丸",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热瘀阻",
+       "formula": "大黄牡丹汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肾虚血瘀",
+       "formula": "补肾祛瘀汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "呕吐",
+   "title": "呕吐",
+   "sections": [
+    {
+     "name": "呕吐",
+     "anchor": "亚朵酒店前台里面",
+     "jue": "令私里想卖爆火",
+     "formulas": [
+      {
+       "syndrome": "痰饮中阻",
+       "formula": "苓桂术甘汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝气犯胃",
+       "formula": "四七汤半夏厚朴汤",
+       "hint": null
+      },
+      {
+       "syndrome": "脾胃阳虚",
+       "formula": "理中汤",
+       "hint": null
+      },
+      {
+       "syndrome": "脾胃气虚",
+       "formula": "香砂六君子",
+       "hint": null
+      },
+      {
+       "syndrome": "胃阴不足",
+       "formula": "麦门冬汤",
+       "hint": null
+      },
+      {
+       "syndrome": "食滞内停",
+       "formula": "保和丸",
+       "hint": null
+      },
+      {
+       "syndrome": "外邪犯胃",
+       "formula": "藿香正气散",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "胁痛",
+   "title": "胁痛",
+   "sections": [
+    {
+     "name": "胁痛",
+     "anchor": "乌东食堂门口的广场",
+     "jue": "龙血衣",
+     "formulas": [
+      {
+       "syndrome": "肝胆湿热",
+       "formula": "龙胆泻肝汤",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀血阻络",
+       "formula": "血府逐瘀汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝络失养",
+       "formula": "一贯煎",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "胃痛消渴",
+   "title": "胃痛消渴",
+   "sections": [
+    {
+     "name": "胃痛",
+     "anchor": "杭州亚朵酒店前台",
+     "jue": "黄氏保清香花易拆",
+     "formulas": [
+      {
+       "syndrome": "脾胃虚寒",
+       "formula": "黄芪建中",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀血停胃",
+       "formula": "失笑散合丹参饮",
+       "hint": null
+      },
+      {
+       "syndrome": "饮食伤胃",
+       "formula": "保和丸",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热中阻",
+       "formula": "清中汤",
+       "hint": null
+      },
+      {
+       "syndrome": "寒邪客胃",
+       "formula": "香苏散合良附丸",
+       "hint": null
+      },
+      {
+       "syndrome": "肝胃郁热",
+       "formula": "化肝煎",
+       "hint": null
+      },
+      {
+       "syndrome": "胃阴亏虚",
+       "formula": "一贯煎+芍药甘草汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝气犯胃",
+       "formula": "柴胡疏肝散",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "消渴",
+     "anchor": "杭州亚朵酒店电梯",
+     "jue": "6金7玉",
+     "formulas": [
+      {
+       "syndrome": "肺热津伤",
+       "formula": "消渴方",
+       "hint": null
+      },
+      {
+       "syndrome": "肾阴亏虚",
+       "formula": "六味地黄",
+       "hint": null
+      },
+      {
+       "syndrome": "阴阳两虚",
+       "formula": "金匮肾气丸",
+       "hint": null
+      },
+      {
+       "syndrome": "气阴亏虚",
+       "formula": "七味白术散",
+       "hint": null
+      },
+      {
+       "syndrome": "胃热炽盛",
+       "formula": "玉女煎",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "肺胀肺痨咳嗽哮病喘证",
+   "title": "肺胀肺痨咳嗽哮病喘证",
+   "sections": [
+    {
+     "name": "肺胀",
+     "anchor": "乌大学邮局门口草坪",
+     "jue": "坪地约苏小针",
+     "formulas": [
+      {
+       "syndrome": "痰瘀阻肺",
+       "formula": "葶苈大枣泻肺汤+桂枝茯苓丸",
+       "hint": null
+      },
+      {
+       "syndrome": "肺肾气虚",
+       "formula": "平喘固本汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰蒙神窍",
+       "formula": "涤痰汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰热郁肺",
+       "formula": "越婢加半夏汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰浊壅肺",
+       "formula": "苏子降气汤",
+       "hint": null
+      },
+      {
+       "syndrome": "外寒里饮",
+       "formula": "小青龙",
+       "hint": null
+      },
+      {
+       "syndrome": "阳虚水泛",
+       "formula": "真武汤+五苓散",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "肺痨",
+     "anchor": "乌大学邮局门口草坪旁边",
+     "jue": "白布包月",
+     "formulas": [
+      {
+       "syndrome": "虚火灼肺",
+       "formula": "百合固金汤+秦艽鳖甲散",
+       "hint": "白"
+      },
+      {
+       "syndrome": "阴阳两虚",
+       "formula": "补天大造丸",
+       "hint": "布"
+      },
+      {
+       "syndrome": "气阴耗伤",
+       "formula": "保真汤",
+       "hint": "包"
+      },
+      {
+       "syndrome": "肺阴亏损",
+       "formula": "月华丸",
+       "hint": "月"
+      }
+     ]
+    },
+    {
+     "name": "咳嗽",
+     "anchor": "乌大学邮局门口路边爸",
+     "jue": "只举行两戴轻沙",
+     "formulas": [
+      {
+       "syndrome": "风寒袭肺",
+       "formula": "三拗汤合止嗽散",
+       "hint": null
+      },
+      {
+       "syndrome": "风热犯肺",
+       "formula": "桑菊饮",
+       "hint": null
+      },
+      {
+       "syndrome": "风燥伤肺",
+       "formula": "桑杏汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰湿蕴肺",
+       "formula": "二陈平胃散合三子养亲汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰热郁肺",
+       "formula": "清金化痰汤",
+       "hint": "清"
+      },
+      {
+       "syndrome": "肝火犯肺",
+       "formula": "黛蛤散合加减泻白散",
+       "hint": "黛"
+      },
+      {
+       "syndrome": "肺阴亏耗",
+       "formula": "沙参麦冬汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "哮病",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "哮病：（金屏）"
+      },
+      {
+       "syndrome": "肺肾两虚",
+       "formula": "金水六君煎",
+       "hint": null
+      },
+      {
+       "syndrome": "虚哮",
+       "formula": "平喘固本汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "哮病",
+     "anchor": "乌大学邮局旁边",
+     "jue": "平定小三射六金",
+     "formulas": [
+      {
+       "syndrome": "虚哮证",
+       "formula": "平喘固本汤",
+       "hint": "平"
+      },
+      {
+       "syndrome": "热哮证",
+       "formula": "定喘汤",
+       "hint": "定"
+      },
+      {
+       "syndrome": "寒包热哮证",
+       "formula": "小青龙加石膏汤或厚朴麻黄汤",
+       "hint": "小"
+      },
+      {
+       "syndrome": "风痰哮证",
+       "formula": "三子养亲汤",
+       "hint": "三"
+      },
+      {
+       "syndrome": "冷哮证",
+       "formula": "射干麻黄汤或小青龙汤",
+       "hint": "射"
+      },
+      {
+       "syndrome": "肺脾气虚证",
+       "formula": "六君子汤",
+       "hint": "六"
+      },
+      {
+       "syndrome": "肺肾两虚证",
+       "formula": "金水六君煎+生脉地黄汤",
+       "hint": "金"
+      }
+     ]
+    },
+    {
+     "name": "喘证",
+     "anchor": "乌大学邮局马路中间",
+     "jue": "婶舞步",
+     "formulas": [
+      {
+       "syndrome": "正虚喘脱",
+       "formula": "参附汤+黑锡丹+蛤蚧粉",
+       "hint": null
+      },
+      {
+       "syndrome": "肺气郁痹",
+       "formula": "五磨饮子",
+       "hint": null
+      },
+      {
+       "syndrome": "肺气虚耗",
+       "formula": "补肺汤+生脉散",
+       "hint": null
+      },
+      {
+       "note": "桑葚生金,麻花25"
+      },
+      {
+       "syndrome": "痰热郁肺",
+       "formula": "桑白皮汤",
+       "hint": null
+      },
+      {
+       "syndrome": "正虚喘脱",
+       "formula": "参附汤送服黑锡丹配蛤蚧粉",
+       "hint": null
+      },
+      {
+       "syndrome": "肺气虚耗",
+       "formula": "生脉散+补气汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肾虚不纳气",
+       "formula": "金匮肾气丸+参蛤散",
+       "hint": null
+      },
+      {
+       "syndrome": "表寒肺热",
+       "formula": "麻杏石甘汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风寒壅肺",
+       "formula": "华盖散+麻黄汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰浊阻肺",
+       "formula": "二陈汤+三子养亲汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肺气郁闭",
+       "formula": "五磨饮子",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "更年期",
+   "title": "更年期",
+   "sections": [
+    {
+     "name": "更年期",
+     "anchor": "老家楼上，墙上兔子手",
+     "jue": "二天左右",
+     "formulas": [
+      {
+       "syndrome": "肾阴阳俱虚",
+       "formula": "二仙汤",
+       "hint": null
+      },
+      {
+       "syndrome": "心肾不交",
+       "formula": "天王补心",
+       "hint": null
+      },
+      {
+       "syndrome": "肾阴虚",
+       "formula": "左归丸",
+       "hint": null
+      },
+      {
+       "syndrome": "肾阳虚",
+       "formula": "右归丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "噎膈",
+   "title": "噎膈",
+   "sections": [
+    {
+     "name": "噎膈",
+     "anchor": "乌大学礼堂门口",
+     "jue": "棋沙不通",
+     "formulas": [
+      {
+       "syndrome": "痰气",
+       "formula": "启膈散",
+       "hint": null
+      },
+      {
+       "syndrome": "津亏热结",
+       "formula": "沙参麦冬",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚阳微",
+       "formula": "补气运脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀血",
+       "formula": "通幽汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "漆疮病因小儿遗尿小便不利穴位",
+   "title": "漆疮病因小儿遗尿小便不利穴位",
+   "sections": [
+    {
+     "name": "病因属于感受特殊之毒的是漆疮",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "治疗小儿遗尿，小便不利，癃闭等泌尿系统疾病的穴位是中极"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "隐疹",
+   "title": "隐疹",
+   "sections": [
+    {
+     "name": "隐疹",
+     "anchor": "老家小旭家北墙",
+     "jue": "妈放小党",
+     "formulas": [
+      {
+       "syndrome": "风寒",
+       "formula": "麻黄桂枝各半汤",
+       "hint": null
+      },
+      {
+       "syndrome": "胃肠湿热",
+       "formula": "防风通圣",
+       "hint": null
+      },
+      {
+       "syndrome": "风热",
+       "formula": "消风散",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚",
+       "formula": "当归饮子",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "哮喘缓解期",
+   "title": "哮喘缓解期",
+   "sections": [
+    {
+     "name": "哮喘缓解期",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "肺肾阴虚",
+       "formula": "麦味地黄丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "经行浮肿吐衄",
+   "title": "经行浮肿吐衄",
+   "sections": [
+    {
+     "name": "经行浮肿",
+     "anchor": "老家房顶东墙",
+     "jue": "八",
+     "formulas": [
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "八物汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "经行吐衄",
+     "anchor": "老家房顶东墙",
+     "jue": "青鼻血顺流",
+     "formulas": [
+      {
+       "syndrome": "肺肾阴虚",
+       "formula": "顺经汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肝经郁火",
+       "formula": "清肝引经汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "疖痈",
+   "title": "疖痈",
+   "sections": [
+    {
+     "name": "疖痈",
+     "anchor": "乌市图书馆后面书店楼梯",
+     "jue": "吴仙脱",
+     "formulas": [
+      {
+       "syndrome": "",
+       "formula": "仙方活命饮"
+      },
+      {
+       "note": "疖"
+      },
+      {
+       "syndrome": "体虚毒恋脾胃弱",
+       "formula": "五神汤+参苓白术散",
+       "hint": null
+      },
+      {
+       "note": "痈"
+      },
+      {
+       "syndrome": "气血两虚",
+       "formula": "托里消毒散",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "肠痈",
+   "title": "肠痈",
+   "sections": [
+    {
+     "name": "肠痈",
+     "anchor": "乌图书馆上楼梯自己",
+     "jue": "柴",
+     "formulas": [
+      {
+       "syndrome": "瘀滞",
+       "formula": "大黄牡丹汤+红藤煎",
+       "hint": null
+      },
+      {
+       "syndrome": "热毒",
+       "formula": "大黄牡丹汤+透脓散",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热",
+       "formula": "大柴胡汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "气瘿肉瘿瘿痈石瘿",
+   "title": "气瘿肉瘿瘿痈石瘿",
+   "sections": [
+    {
+     "name": "气瘿肉瘿瘿痈石瘿",
+     "anchor": "老家小学",
+     "jue": "一楼气球上有四海",
+     "formulas": [
+      {
+       "syndrome": "气瘿",
+       "formula": "肝郁气滞",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "气瘿肉瘿瘿痈石瘿",
+     "anchor": "老家小学，一楼东墙有",
+     "jue": "要生海藻",
+     "formulas": [
+      {
+       "syndrome": "肉瘿",
+       "formula": "气滞痰凝",
+       "hint": null
+      },
+      {
+       "syndrome": "肉瘿",
+       "formula": "气阴两虚",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "气瘿肉瘿瘿痈石瘿",
+     "anchor": "老家小学，一楼玻璃上",
+     "jue": "柴牛泳",
+     "formulas": [
+      {
+       "syndrome": "瘿痈",
+       "formula": "风热痰凝",
+       "hint": null
+      },
+      {
+       "syndrome": "瘿痈",
+       "formula": "气滞痰凝",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "气瘿肉瘿瘿痈石瘿",
+     "anchor": "老家小学，一楼教室门口有石头",
+     "jue": "涛痒",
+     "formulas": [
+      {
+       "syndrome": "石瘿",
+       "formula": "痰瘀内结",
+       "hint": null
+      },
+      {
+       "syndrome": "石瘿",
+       "formula": "瘀热伤阴",
+       "hint": null
+      },
+      {
+       "syndrome": "",
+       "formula": "四海舒郁丸"
+      },
+      {
+       "note": "海带、海藻、海螵蛸、海蛤粉、昆布、青木香、陈皮"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "毒蛇烧伤筋瘤臁疮",
+   "title": "毒蛇烧伤筋瘤臁疮",
+   "sections": [
+    {
+     "name": "毒蛇",
+     "anchor": "乌图书馆门口下面",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "神经毒者有金环蛇、银环蛇、海蛇金银嗨"
+      },
+      {
+       "note": "血循毒者有蝰蛇、尖吻蝮蛇、竹叶青蛇和饹铁头蛇,"
+      },
+      {
+       "note": "混合毒者有蝮蛇、眼镜蛇、眼镜王蛇扶眼镜"
+      }
+     ]
+    },
+    {
+     "name": "烧伤深度",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "a.烧伤I度，红斑：表皮角质层，红肿热痛"
+      },
+      {
+       "note": "b.烧伤二度：水疱"
+      },
+      {
+       "note": "i.浅：到真皮层，剧痛"
+      },
+      {
+       "note": "ii.深：到真皮层，痛觉消失"
+      },
+      {
+       "note": "c.三度：皮肤全层，甚至伤及皮下组织、肌肉和骨骼"
+      }
+     ]
+    },
+    {
+     "name": "筋瘤",
+     "anchor": "乌图书馆进门左边薇",
+     "jue": "不暖和",
+     "formulas": [
+      {
+       "syndrome": "气虚",
+       "formula": "补中益气汤",
+       "hint": null
+      },
+      {
+       "syndrome": "寒凝",
+       "formula": "暖肝煎+当归四逆汤",
+       "hint": null
+      },
+      {
+       "syndrome": "外伤",
+       "formula": "活血散瘀汤",
+       "hint": null
+      },
+      {
+       "note": "烧伤面积9分法，上肢18%；头颈9，单上肢9，单下肢18，前胸18，后胸18"
+      }
+     ]
+    },
+    {
+     "name": "臁疮",
+     "anchor": "乌图书馆进门左",
+     "jue": "耳部",
+     "formulas": [
+      {
+       "syndrome": "气虚血瘀",
+       "formula": "补阳还五汤+四物汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热下注",
+       "formula": "二妙丸+五神汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "鹅口疮口疮疳证",
+   "title": "鹅口疮口疮疳证",
+   "sections": [
+    {
+     "name": "鹅口疮",
+     "anchor": "乌图书馆内部中间柱子",
+     "jue": "青汁",
+     "formulas": [
+      {
+       "syndrome": "心脾积热",
+       "formula": "清热泻脾散",
+       "hint": "青"
+      },
+      {
+       "syndrome": "虚火上浮",
+       "formula": "知柏地黄丸",
+       "hint": "汁"
+      }
+     ]
+    },
+    {
+     "name": "口疮",
+     "anchor": "乌图书馆内部中间柱子",
+     "jue": "鞋印",
+     "formulas": [
+      {
+       "syndrome": "心火上炎",
+       "formula": "泻心导赤散",
+       "hint": "鞋"
+      },
+      {
+       "syndrome": "风热乘脾",
+       "formula": "银翘散",
+       "hint": "印"
+      },
+      {
+       "syndrome": "虚火上浮",
+       "formula": "六味地黄丸",
+       "hint": null
+      },
+      {
+       "syndrome": "疳气",
+       "formula": "资生丸",
+       "hint": null
+      },
+      {
+       "syndrome": "疳积",
+       "formula": "肥儿丸",
+       "hint": null
+      },
+      {
+       "syndrome": "干疳",
+       "formula": "八珍汤",
+       "hint": null
+      },
+      {
+       "syndrome": "疳肿",
+       "formula": "防己黄芪汤+五苓散",
+       "hint": null
+      },
+      {
+       "syndrome": "眼疳",
+       "formula": "石斛夜光丸",
+       "hint": null
+      },
+      {
+       "syndrome": "口疳",
+       "formula": "泻心导赤汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "牛皮癣湿疮隐疹白庇",
+   "title": "牛皮癣湿疮隐疹白庇",
+   "sections": [
+    {
+     "name": "牛皮癣",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "肝郁化火",
+       "formula": "龙胆泻肝汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热蕴肤",
+       "formula": "消风散",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚风燥",
+       "formula": "当归饮子",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "湿疮",
+     "anchor": "老家小学二楼",
+     "jue": "龙尾寺",
+     "formulas": [
+      {
+       "syndrome": "湿热蕴肤",
+       "formula": "龙胆泽泻+萆薢渗湿汤",
+       "hint": null
+      },
+      {
+       "syndrome": "脾虚湿蕴",
+       "formula": "胃苓汤/参苓白术散",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚风燥",
+       "formula": "当归饮子/四物消风饮",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "隐疹",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "隐疹（荨麻疹）"
+      },
+      {
+       "syndrome": "风热犯表",
+       "formula": "消风散",
+       "hint": null
+      },
+      {
+       "syndrome": "风寒",
+       "formula": "麻黄桂枝各半汤",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚风燥",
+       "formula": "当归饮子",
+       "hint": null
+      },
+      {
+       "syndrome": "肠胃湿热",
+       "formula": "防风通圣散",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "白庇",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "血热",
+       "formula": "犀角地黄汤",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚",
+       "formula": "当归饮子",
+       "hint": null
+      },
+      {
+       "syndrome": "气血瘀滞",
+       "formula": "桃红四物汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿毒郁结",
+       "formula": "萆薢渗湿汤",
+       "hint": null
+      },
+      {
+       "syndrome": "火毒炽盛",
+       "formula": "清瘟败毒饮",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "皮肤病方剂总结",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "脾虚湿蕴",
+       "formula": "胃苓汤/参苓白术散",
+       "hint": null
+      },
+      {
+       "syndrome": "血虚风燥",
+       "formula": "当归饮子/四物消风饮",
+       "hint": null
+      },
+      {
+       "syndrome": "湿毒郁结",
+       "formula": "萆薢渗湿汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热蕴肤",
+       "formula": "消风散",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "脱疽",
+   "title": "脱疽",
+   "sections": [
+    {
+     "name": "脱疽",
+     "anchor": "乌图书馆门口",
+     "jue": "姑套四黄羊",
+     "formulas": [
+      {
+       "syndrome": "热毒伤阴",
+       "formula": "顾步汤",
+       "hint": "姑"
+      },
+      {
+       "syndrome": "血脉瘀阻",
+       "formula": "桃红四物",
+       "hint": "套"
+      },
+      {
+       "syndrome": "湿热毒盛",
+       "formula": "四妙勇安汤",
+       "hint": "四"
+      },
+      {
+       "syndrome": "气阴两虚",
+       "formula": "黄芪鳖甲汤",
+       "hint": "黄"
+      },
+      {
+       "syndrome": "寒湿阻络",
+       "formula": "阳和汤",
+       "hint": "羊"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "内痔血栓性外痔息肉痔锁肛痔肛痈",
+   "title": "内痔血栓性外痔息肉痔锁肛痔肛痈",
+   "sections": [
+    {
+     "name": "内痔血栓性外痔息肉痔锁肛",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "内痔血栓性外痔息肉痔锁肛痔肛痈"
+      }
+     ]
+    },
+    {
+     "name": "内痔",
+     "anchor": "乌图书馆",
+     "jue": "量脏纸",
+     "formulas": [
+      {
+       "syndrome": "脾虚气陷",
+       "formula": "补中益气汤",
+       "hint": null
+      },
+      {
+       "syndrome": "风伤肠络",
+       "formula": "凉血地黄汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热下注",
+       "formula": "脏连丸",
+       "hint": null
+      },
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "止痛如神汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "血栓性外痔",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "血热瘀结",
+       "formula": "凉血地黄汤+活血散瘀汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "息肉痔",
+     "anchor": "乌图书馆门口柱子",
+     "jue": "烧坏",
+     "formulas": [
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "少腹逐瘀",
+       "hint": "烧"
+      },
+      {
+       "syndrome": "风伤肠络",
+       "formula": "槐角丸",
+       "hint": "坏"
+      }
+     ]
+    },
+    {
+     "name": "锁肛痔",
+     "anchor": "图书馆左侧柱子",
+     "jue": "四坏桃",
+     "formulas": [
+      {
+       "syndrome": "气阴两虚",
+       "formula": "四君子+增液汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热蕴结",
+       "formula": "槐角地榆丸",
+       "hint": "坏"
+      },
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "桃红四物汤+失笑散",
+       "hint": "桃"
+      }
+     ]
+    },
+    {
+     "name": "肛痈",
+     "anchor": "图书馆正门",
+     "jue": "请仙投",
+     "formulas": [
+      {
+       "syndrome": "阴虚毒恋",
+       "formula": "青蒿鳖甲汤",
+       "hint": "请"
+      },
+      {
+       "syndrome": "热毒蕴结证",
+       "formula": "仙方活命饮",
+       "hint": "仙"
+      },
+      {
+       "syndrome": "火毒炽盛",
+       "formula": "透脓散",
+       "hint": "投"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "麻疹风痧丹痧水痘手足口病痄腮",
+   "title": "麻疹风痧丹痧水痘手足口病痄腮",
+   "sections": [
+    {
+     "name": "麻疹",
+     "anchor": "乌大学办公楼右边",
+     "jue": "悬青纱",
+     "formulas": [
+      {
+       "syndrome": "邪犯肺卫",
+       "formula": "宣毒发表汤",
+       "hint": "宣"
+      },
+      {
+       "syndrome": "邪入肺胃",
+       "formula": "清解透表汤",
+       "hint": "清"
+      },
+      {
+       "syndrome": "阴津耗伤",
+       "formula": "沙参麦冬汤",
+       "hint": "沙"
+      }
+     ]
+    },
+    {
+     "name": "逆证",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "邪毒闭肺",
+       "formula": "麻杏石甘汤",
+       "hint": "妈"
+      },
+      {
+       "syndrome": "邪毒攻喉",
+       "formula": "清咽下痰汤",
+       "hint": "清"
+      },
+      {
+       "syndrome": "邪陷心肝",
+       "formula": "羚角钩藤汤",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "特点",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "01发热3",
+       "formula": "4天出疹，出疹时发热更高",
+       "hint": null
+      },
+      {
+       "syndrome": "02耳后发际",
+       "formula": "面和颈",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "风痧",
+     "anchor": "乌大学银行门口",
+     "jue": "银头",
+     "formulas": [
+      {
+       "syndrome": "邪犯肺卫",
+       "formula": "银翘散",
+       "hint": "银"
+      },
+      {
+       "syndrome": "邪入气营",
+       "formula": "透疹凉解汤",
+       "hint": "头"
+      }
+     ]
+    },
+    {
+     "name": "特点",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "01发热0.5",
+       "formula": "1天",
+       "hint": null
+      },
+      {
+       "syndrome": "02头面",
+       "formula": "躯干",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "丹痧",
+     "anchor": "乌大学办公楼门口",
+     "jue": "姐量啥",
+     "formulas": [
+      {
+       "syndrome": "邪侵肺卫",
+       "formula": "解肌透痧汤",
+       "hint": "解"
+      },
+      {
+       "syndrome": "毒炽气营",
+       "formula": "凉营清气汤",
+       "hint": "凉"
+      },
+      {
+       "syndrome": "疹后阴伤",
+       "formula": "沙参麦冬汤",
+       "hint": "沙"
+      }
+     ]
+    },
+    {
+     "name": "特点",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "01发热数小时",
+       "formula": "1天，出疹发热更高",
+       "hint": null
+      },
+      {
+       "syndrome": "02细小丘疹，皮肤猩红，颈、腋下、腹股沟开始，2",
+       "formula": "3天全身。退疹后无色素沉着，有大片脱皮。",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "水痘",
+     "anchor": "乌大学办公楼门前",
+     "jue": "青银",
+     "formulas": [
+      {
+       "syndrome": "邪炽气营",
+       "formula": "清胃解毒汤",
+       "hint": null
+      },
+      {
+       "syndrome": "邪伤肺卫",
+       "formula": "银翘散",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "特点",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "01发热或不发热，1",
+       "formula": "2天出疹",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "手足口病",
+     "anchor": "乌大学门口外面右边",
+     "jue": "情感",
+     "formulas": [
+      {
+       "syndrome": "湿热蒸盛",
+       "formula": "清瘟败毒散",
+       "hint": null
+      },
+      {
+       "syndrome": "邪犯肺脾",
+       "formula": "甘露消毒丹",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "痄腮",
+     "anchor": "乌大学门口右边",
+     "jue": "青龙拆铺",
+     "formulas": [
+      {
+       "syndrome": "邪陷心肝",
+       "formula": "清瘟败毒散",
+       "hint": null
+      },
+      {
+       "syndrome": "毒窜睾腹",
+       "formula": "龙胆泻肝汤",
+       "hint": null
+      },
+      {
+       "syndrome": "邪犯少阳",
+       "formula": "柴胡葛根汤",
+       "hint": null
+      },
+      {
+       "syndrome": "热毒蕴结",
+       "formula": "普济消毒饮",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "虫证",
+   "title": "虫证",
+   "sections": [
+    {
+     "name": "虫证",
+     "anchor": "乌大学正门口",
+     "jue": "食物区",
+     "formulas": [
+      {
+       "syndrome": "肠虫症",
+       "formula": "使君子散",
+       "hint": null
+      },
+      {
+       "syndrome": "蛔厥证",
+       "formula": "乌梅丸",
+       "hint": null
+      },
+      {
+       "syndrome": "虫瘕证",
+       "formula": "驱蛔承气汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "痛经",
+   "title": "痛经",
+   "sections": [
+    {
+     "name": "痛经",
+     "anchor": "老家楼上",
+     "jue": "哥请生疑问",
+     "formulas": [
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "膈下逐瘀汤",
+       "hint": "哥"
+      },
+      {
+       "syndrome": "湿热瘀阻",
+       "formula": "清热调血汤",
+       "hint": "请"
+      },
+      {
+       "syndrome": "气血虚弱",
+       "formula": "圣愈汤",
+       "hint": "生"
+      },
+      {
+       "syndrome": "肾气亏虚",
+       "formula": "益肾调经",
+       "hint": "疑"
+      },
+      {
+       "syndrome": "阳虚内寒",
+       "formula": "温经汤",
+       "hint": "问"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "闭经",
+   "title": "闭经",
+   "sections": [
+    {
+     "name": "闭经",
+     "anchor": "老家楼房上",
+     "jue": "任佳佳学苍",
+     "formulas": [
+      {
+       "syndrome": "气血虚弱",
+       "formula": "人参养荣汤",
+       "hint": "任"
+      },
+      {
+       "syndrome": "肾气亏虚",
+       "formula": "加减苁蓉菟丝子丸",
+       "hint": "佳"
+      },
+      {
+       "syndrome": "阴虚血燥",
+       "formula": "加减一阴煎",
+       "hint": "佳"
+      },
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "血府逐瘀汤",
+       "hint": "学"
+      },
+      {
+       "syndrome": "痰湿阻滞",
+       "formula": "四君子+苍附导痰丸",
+       "hint": "苍"
+      },
+      {
+       "syndrome": "寒凝血瘀",
+       "formula": "温经汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "月经间期出血崩漏",
+   "title": "月经间期出血崩漏",
+   "sections": [
+    {
+     "name": "月经间期出血",
+     "anchor": "老家楼梯",
+     "jue": "两鬼清猪",
+     "formulas": [
+      {
+       "syndrome": "肾虚",
+       "formula": "两地汤",
+       "hint": null
+      },
+      {
+       "syndrome": "脾气虚",
+       "formula": "归脾汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热",
+       "formula": "清肝止淋汤",
+       "hint": null
+      },
+      {
+       "syndrome": "血瘀",
+       "formula": "逐瘀止血汤或四草汤！",
+       "hint": null
+      }
+     ]
+    },
+    {
+     "name": "崩漏",
+     "anchor": "老家楼梯",
+     "jue": "加上姑庆祝",
+     "formulas": [
+      {
+       "note": "左(肾阴)右(肾阳)"
+      },
+      {
+       "note": "脾虚：举元煎合安冲汤"
+      },
+      {
+       "syndrome": "肾气虚",
+       "formula": "加减苁蓉菟丝子丸",
+       "hint": null
+      },
+      {
+       "syndrome": "虚热",
+       "formula": "上下相资汤",
+       "hint": null
+      },
+      {
+       "syndrome": "脾虚",
+       "formula": "固本止崩汤",
+       "hint": null
+      },
+      {
+       "syndrome": "实热",
+       "formula": "清热固经汤",
+       "hint": null
+      },
+      {
+       "syndrome": "血瘀",
+       "formula": "逐瘀止血汤或四草汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "月经过多过少",
+   "title": "月经过多过少",
+   "sections": [
+    {
+     "name": "月经过多",
+     "anchor": "箭头前",
+     "jue": "保举是",
+     "formulas": [
+      {
+       "syndrome": "血热",
+       "formula": "保阴煎",
+       "hint": "保"
+      },
+      {
+       "syndrome": "气虚",
+       "formula": "举元煎",
+       "hint": "举"
+      },
+      {
+       "syndrome": "血瘀",
+       "formula": "失笑散",
+       "hint": "是"
+      }
+     ]
+    },
+    {
+     "name": "月经过少",
+     "anchor": "箭头后",
+     "jue": "鬼子",
+     "formulas": [
+      {
+       "syndrome": "肾虚",
+       "formula": "归肾丸",
+       "hint": "鬼"
+      },
+      {
+       "syndrome": "血虚",
+       "formula": "滋血汤",
+       "hint": "子"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "不孕症",
+   "title": "不孕症",
+   "sections": [
+    {
+     "name": "不孕症",
+     "anchor": "豆腐脑大棚，旁边小卖部",
+     "jue": "刘少养藏凯文",
+     "formulas": [
+      {
+       "syndrome": "肾气虚",
+       "formula": "毓麟珠",
+       "hint": null
+      },
+      {
+       "syndrome": "瘀滞胞宫",
+       "formula": "少腹逐瘀",
+       "hint": null
+      },
+      {
+       "syndrome": "肾阴虚",
+       "formula": "养精种玉汤",
+       "hint": null
+      },
+      {
+       "syndrome": "痰湿内阻",
+       "formula": "苍附导痰丸",
+       "hint": null
+      },
+      {
+       "syndrome": "肝气郁结",
+       "formula": "开郁种玉汤",
+       "hint": null
+      },
+      {
+       "syndrome": "肾阳虚",
+       "formula": "温胞饮或右归丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "急慢性盆腔炎",
+   "title": "急慢性盆腔炎",
+   "sections": [
+    {
+     "name": "盆腔炎",
+     "anchor": "老家大棚豆腐脑旁",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "急性：5仙"
+      },
+      {
+       "syndrome": "热毒炽盛",
+       "formula": "五味消毒饮",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热瘀结",
+       "formula": "仙方活命饮",
+       "hint": null
+      },
+      {
+       "note": "慢性：哥烧阴历"
+      },
+      {
+       "syndrome": "气滞血瘀",
+       "formula": "膈下逐瘀",
+       "hint": null
+      },
+      {
+       "syndrome": "寒湿凝滞",
+       "formula": "少腹逐瘀",
+       "hint": null
+      },
+      {
+       "syndrome": "湿热瘀结",
+       "formula": "银甲丸或当归芍药散",
+       "hint": null
+      },
+      {
+       "syndrome": "气虚血瘀",
+       "formula": "理冲汤",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "子肿",
+   "title": "子肿",
+   "sections": [
+    {
+     "name": "子肿",
+     "anchor": "老家豆腐脑棚，天真白",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "气滞",
+       "formula": "天仙藤散或正气天香散",
+       "hint": null
+      },
+      {
+       "syndrome": "肾虚",
+       "formula": "真武汤",
+       "hint": null
+      },
+      {
+       "syndrome": "脾虚",
+       "formula": "白术散",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "带下过多过少",
+   "title": "带下过多过少",
+   "sections": [
+    {
+     "name": "带下过多",
+     "anchor": "小学门口",
+     "jue": "5指指内丸",
+     "formulas": [
+      {
+       "syndrome": "五味消毒饮",
+       "formula": "五",
+       "hint": null
+      },
+      {
+       "syndrome": "止带方",
+       "formula": "指",
+       "hint": null
+      },
+      {
+       "syndrome": "肝经湿热",
+       "formula": "龙胆泻肝汤",
+       "hint": null
+      },
+      {
+       "syndrome": "湿浊",
+       "formula": "萆薢渗湿汤",
+       "hint": null
+      },
+      {
+       "syndrome": "阴虚夹湿热",
+       "formula": "知柏地黄汤",
+       "hint": null
+      },
+      {
+       "syndrome": "内补丸",
+       "formula": "内",
+       "hint": null
+      },
+      {
+       "syndrome": "完带汤",
+       "formula": "丸",
+       "hint": null
+      },
+      {
+       "syndrome": "脾虚湿热",
+       "formula": "易黄汤？",
+       "hint": null
+      },
+      {
+       "note": "带下过少：小左"
+      },
+      {
+       "syndrome": "血枯瘀阻",
+       "formula": "小营煎",
+       "hint": null
+      },
+      {
+       "syndrome": "肝肾亏虚",
+       "formula": "左归丸",
+       "hint": null
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "乳癖乳痈乳岩",
+   "title": "乳癖乳痈乳岩",
+   "sections": [
+    {
+     "name": "乳癖",
+     "anchor": "小学门口左边",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "肝郁痰凝",
+       "formula": "逍遥贝蒌散",
+       "hint": "笑"
+      },
+      {
+       "syndrome": "冲任失调",
+       "formula": "二仙汤+四物汤",
+       "hint": "仙"
+      }
+     ]
+    },
+    {
+     "name": "乳痈",
+     "anchor": "小学门口右边",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "正虚邪恋",
+       "formula": "托里消毒散",
+       "hint": "佗"
+      },
+      {
+       "syndrome": "热毒炽盛",
+       "formula": "透脓散",
+       "hint": "偷"
+      },
+      {
+       "syndrome": "气滞热壅",
+       "formula": "瓜蒌牛蒡汤",
+       "hint": "瓜"
+      }
+     ]
+    },
+    {
+     "name": "乳岩",
+     "anchor": "小学门口里面",
+     "jue": null,
+     "formulas": [
+      {
+       "syndrome": "正虚毒盛",
+       "formula": "八珍汤",
+       "hint": "八"
+      },
+      {
+       "syndrome": "气血亏虚",
+       "formula": "人参养荣汤",
+       "hint": "人"
+      },
+      {
+       "syndrome": "脾虚胃弱",
+       "formula": "参苓白术散或理中汤",
+       "hint": "参"
+      },
+      {
+       "syndrome": "肝郁痰凝",
+       "formula": "神效瓜蒌散",
+       "hint": "神"
+      },
+      {
+       "syndrome": "冲任失调",
+       "formula": "二仙汤",
+       "hint": "仙"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  },
+  {
+   "id": "脉象八要素特征",
+   "title": "脉象八要素特征",
+   "sections": [
+    {
+     "name": "金石榴",
+     "anchor": "",
+     "jue": null,
+     "formulas": [
+      {
+       "note": "脉位，率，律，宽，长，紧，势，流利"
+      }
+     ]
+    }
+   ],
+   "knowledge": []
+  }
+ ]
+}
