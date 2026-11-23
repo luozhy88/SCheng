@@ -1,5 +1,11 @@
 name = "gejue-game"
+main = "worker.js"
 compatibility_date = "2026-04-09"
 
 [assets]
 directory = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gejue-game"
+database_id = "2614845c-5f75-4ffb-a6d0-cad60bff8062"

@@ -164,6 +164,7 @@ body{
       <button class="coin" id="btn-user" style="cursor:pointer;border:none;font-family:inherit">👤 <span id="username">…</span></button>
       <div class="coin">🪙 <span id="coins">0</span></div>
       <div class="sp"></div>
+      <button class="iconbtn" id="btn-cloud" title="云存档">☁️</button>
       <button class="iconbtn" id="btn-mute" title="音效">🔊</button>
       <button class="iconbtn" id="btn-help" title="玩法">❓</button>
     </div>
@@ -3943,7 +3944,7 @@ if(!root.seeded){
 let curUser="我";
 if(!root.users[curUser])curUser=root.order[0]||"我";
 function save(){return root.users[curUser];}
-function persist(){try{localStorage.setItem(LS,JSON.stringify(root));}catch(e){}}
+function persist(){root.updatedAt=Date.now();try{localStorage.setItem(LS,JSON.stringify(root));}catch(e){}if(window.__cloudReady)scheduleCloudPush();}
 function lvst(uid){const s=save();if(!s.levels[uid])s.levels[uid]={stars:0,best:0,clears:0};return s.levels[uid];}
 function peekst(uid){const s=save();return s.levels[uid]||{stars:0,best:0,clears:0};}
 function switchUser(name){
@@ -4323,6 +4324,62 @@ function showUserPanel(){
 }
 $("btn-user").onclick=showUserPanel;
 
+/* ================= 云存档（Worker + D1） ================= */
+const CLOUD={key:null,busy:false,timer:0};
+try{CLOUD.key=localStorage.getItem(LS+"-cloudkey")||null;}catch(e){}
+function cloudBadge(){
+  const b=$("btn-cloud");if(!b)return;
+  b.textContent=CLOUD.key?"☁️✅":"☁️";
+  b.title=CLOUD.key?("云存档已开启："+CLOUD.key+"（点击更换/关闭）"):"云存档未开启（点击开启，可多设备同步）";
+}
+async function cloudPush(){
+  if(!CLOUD.key||CLOUD.busy)return;
+  CLOUD.busy=true;
+  try{
+    await fetch("/api/save",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({key:CLOUD.key,data:root,updatedAt:root.updatedAt||0})});
+  }catch(e){}
+  CLOUD.busy=false;
+}
+function scheduleCloudPush(){
+  if(!CLOUD.key)return;
+  clearTimeout(CLOUD.timer);
+  CLOUD.timer=setTimeout(cloudPush,1500);
+}
+async function cloudPull(){
+  cloudBadge();
+  if(!CLOUD.key)return;
+  try{
+    const r=await fetch("/api/save?key="+encodeURIComponent(CLOUD.key));
+    if(r.status===404){cloudPush();return;}
+    if(!r.ok)return;
+    const remote=await r.json();
+    const localTs=root.updatedAt||0;
+    if(remote.updatedAt>localTs){
+      root=Object.assign(root,remote.data);
+      root.updatedAt=remote.updatedAt;
+      try{localStorage.setItem(LS,JSON.stringify(root));}catch(e){}
+      renderMap();
+    }else if(remote.updatedAt<localTs){
+      cloudPush();
+    }
+  }catch(e){}
+}
+$("btn-cloud").onclick=()=>{
+  sfx("pop");
+  const v=prompt("云存档密钥：2-64位字母/数字/_/-。\n开启后本机进度自动同步到服务器，其他设备输入同一密钥即可继续游戏；留空则关闭同步。",
+    CLOUD.key||"");
+  if(v===null)return;
+  const k=v.trim();
+  if(k&&!/^[A-Za-z0-9_-]{2,64}$/.test(k)){alert("密钥格式不正确（2-64位字母、数字、_或-）");return;}
+  CLOUD.key=k||null;
+  try{localStorage.setItem(LS+"-cloudkey",CLOUD.key||"");}catch(e){}
+  cloudBadge();
+  if(CLOUD.key){if(!root.updatedAt)root.updatedAt=Date.now();cloudPush();}
+};
+window.__cloudReady=true;
+cloudBadge();
+
 /* ================= 顶部按钮 ================= */
 $("btn-flee").onclick=()=>{sfx("pop");ui.toMap();};
 $("btn-mute").onclick=()=>{root.muted=!root.muted;persist();$("btn-mute").textContent=root.muted?"🔇":"🔊";};
@@ -4342,6 +4399,7 @@ $("btn-help").onclick=()=>{
 
 /* ================= 启动 ================= */
 renderMap();
+cloudPull();
 if(!localStorage.getItem(LS+"-seen")){
   $("btn-help").click();
   try{localStorage.setItem(LS+"-seen","1");}catch(e){}
