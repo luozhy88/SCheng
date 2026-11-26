@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>歌诀降魔传 · 记忆宫殿大冒险</title>
+<title>Formula Quest · Memory Palace Adventure</title>
 <meta name="app-version" content="__VERSION__">
 <style>
 :root{
@@ -166,6 +166,8 @@ body{
       <div class="coin">🪙 <span id="coins">0</span></div>
       <span style="font-size:11px;opacity:.45;align-self:center">v__VERSION__</span>
       <div class="sp"></div>
+      <button class="iconbtn" id="btn-wrong" title="错题复习">📝</button>
+      <button class="iconbtn" id="btn-search" title="搜索复习">🔍</button>
       <button class="iconbtn" id="btn-cloud" title="云存档">☁️</button>
       <button class="iconbtn" id="btn-mute" title="音效">🔊</button>
       <button class="iconbtn" id="btn-help" title="玩法">❓</button>
@@ -375,8 +377,7 @@ function openTreasure(c){
     showPanel(`<div class="big-emoji">🧧</div><h2>${c.name} · 学识宝箱</h2>
       ${first?'<p>首开得 🪙100 + ⭐⭐⭐</p>':"<p>已开启过（首次奖励已领）</p>"}
       <div style="text-align:left;margin-top:10px;max-height:40vh;overflow-y:auto">
-      ${c.formulas.map(f=>f.note?`<p>📜 ${f.note}</p>`:
-        `<p>💊 ${f.syndrome?f.syndrome+" → ":""}<b>${f.formula}</b>${f.hint?` <small>（${f.hint}）</small>`:""}</p>`).join("")||"<p>空空如也</p>"}
+      ${cardHtml(c).replace("暂无内容","空空如也")}
       </div>
       <button class="btn" onclick="ui.closePanel(true)">收入囊中</button>`);
     confetti(20);
@@ -444,6 +445,7 @@ function tapBubble(b,ch){
     b.classList.add("bad");sfx("bad");
     B.combo=0;B.wrong++;drawCombo();
     hurtPlayer();
+    if(B.hearts>0&&B.wrong>=2){const t=$("taunt");if(t)t.textContent=`💡 老是记不住？下一个字是「${B.need[B.next]}」`;}
     setTimeout(()=>b.classList.remove("bad"),400);
   }
 }
@@ -505,7 +507,7 @@ function formulaRound(){
         b.classList.add("wrong");sfx("bad");B.combo=0;
         document.querySelectorAll("#overlay-root .opt").forEach(x=>{
           if(x.dataset.v===f.formula)x.classList.add("right");else if(x!==b)x.classList.add("dim");});
-        setTimeout(()=>{i++;ask();},900);
+        setTimeout(()=>{i++;ask();},1600);
       }
     });
   }
@@ -542,8 +544,13 @@ function victory(){
 }
 function defeat(){
   B.locked=true;sfx("lose");
+  const ans=B.card.formulas.filter(f=>f.formula||f.note).slice(0,8);
   showPanel(`<div class="big-emoji">💀</div><h2>被 ${B.card.name} 大魔王击退了…</h2>
-    <p>别灰心！想想 📍${B.card.anchor||""} 的画面，再来一次！</p>
+    <div style="text-align:left;background:#fff;border:2px dashed #e5d5b8;border-radius:14px;padding:12px 14px;margin-top:10px;max-height:38vh;overflow-y:auto">
+      <div style="font-weight:800;text-align:center">📖 答案揭晓，记住它，下次再战！</div>
+      <div style="text-align:center;font-size:24px;font-weight:900;color:#d1495b;margin:6px 0">【${B.card.jue}】</div>
+      ${ans.map(f=>f.note?`<p>📜 ${f.note}</p>`:`<p>💊 ${f.syndrome?f.syndrome+" → ":""}<b>${f.formula}</b></p>`).join("")}
+    </div>
     <button class="btn" onclick="ui.retry()">⚔️ 再次挑战</button>
     <button class="btn ghost" onclick="ui.toMap()">🗺️ 回地图修炼</button>`);
 }
@@ -591,7 +598,20 @@ function showUserPanel(){
       <button class="btn blue" id="btn-add-user" style="margin:0">＋ 添加</button>
     </div>
     <p style="font-size:12px;margin-top:8px">每个用户有独立的金币、星级与关卡进度</p>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:10px;background:#f7f1e3;border-radius:10px;padding:8px 10px;font-size:12px">
+      <span>☁️ 云存档密钥</span>
+      <code id="cloud-key" style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;user-select:text">${CLOUD.key||"未开启"}</code>
+      <button class="btn-mini" id="btn-copy-key">复制</button>
+    </div>
+    <p style="font-size:11px;margin-top:6px;color:#9b8871">进度自动备份到云端；换新设备/浏览器时在此输入同一密钥即可恢复</p>
     <button class="btn ghost" onclick="ui.closePanel()">关闭</button>`);
+  const ck=$("btn-copy-key");
+  if(ck)ck.onclick=()=>{
+    const k=$("cloud-key").textContent;
+    const done=()=>alert("已复制云存档密钥：\n"+k+"\n\n在其他设备的云存档按钮里输入同一密钥，即可恢复全部进度。");
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(k).then(done).catch(()=>prompt("手动复制密钥：",k));
+    else prompt("手动复制密钥：",k);
+  };
   document.querySelectorAll("#overlay-root .opt").forEach(el=>{
     el.onclick=()=>{const n=el.dataset.u;if(n!==curUser){switchUser(n);sfx("coin");}closePanel();};
   });
@@ -618,9 +638,70 @@ function showUserPanel(){
 }
 $("btn-user").onclick=showUserPanel;
 
+/* ================= 搜索复习 ================= */
+function cardHtml(c){
+  return c.formulas.map(f=>f.note?`<p>📜 ${f.note}</p>`:
+    `<p>💊 ${f.syndrome?f.syndrome+" → ":""}<b>${f.formula}</b>${f.hint?` <small>（${f.hint}）</small>`:""}</p>`).join("")||"<p>暂无内容</p>";
+}
+function searchCards(q){
+  q=q.trim().toLowerCase();
+  if(!q)return[];
+  const res=[];
+  for(const c of CARDS){
+    const hay=(c.name+" "+c.entry+" "+c.anchor+" "+c.jue+" "+
+      c.formulas.map(f=>f.note||((f.syndrome||"")+" "+(f.formula||""))).join(" ")).toLowerCase();
+    if(hay.includes(q))res.push(c);
+    if(res.length>=30)break;
+  }
+  return res;
+}
+let searchLast=[];
+function showSearchPanel(){
+  sfx("pop");
+  showPanel(`<div class="big-emoji">🔍</div><h2>搜索复习</h2>
+    <input id="sq" placeholder="搜病名 / 证型 / 方剂 / 歌诀字 / 地点…"
+      style="width:100%;border:2px solid #e5d5b8;border-radius:12px;padding:11px 12px;font-size:15px;background:#fff">
+    <div id="sres" style="margin-top:10px;text-align:left;max-height:46vh;overflow-y:auto"></div>
+    <button class="btn ghost" onclick="ui.closePanel()">关闭</button>`);
+  const inp=$("sq"),box=$("sres");
+  const render=()=>{
+    searchLast=searchCards(inp.value);
+    box.innerHTML=searchLast.length?searchLast.map((c,i)=>`
+      <div class="opt" data-i="${i}" style="text-align:left;margin-bottom:6px">
+        <b>${c.name}</b> <small style="color:#9b8871">${c.entry}</small><br>
+        <small>${c.jue?`【${c.jue}】 `:""}📍 ${c.anchor||"—"}</small>
+      </div>`).join(""):
+      (inp.value.trim()?'<p style="text-align:center;color:#9b8871">没有匹配的内容</p>':"");
+    box.querySelectorAll(".opt").forEach(el=>el.onclick=()=>showCardDetail(searchLast[+el.dataset.i]));
+  };
+  inp.oninput=render;render();
+  setTimeout(()=>inp.focus(),50);
+}
+function showCardDetail(c){
+  sfx("pop");
+  showPanel(`<h2>${c.name}</h2>
+    <p>${c.jue?`【<b style="color:#d1495b">${c.jue}</b>】 `:""}📍 ${c.anchor||c.entry}
+       <small style="color:#9b8871">（${c.entry}）</small></p>
+    <div style="text-align:left;margin-top:8px;max-height:44vh;overflow-y:auto">${cardHtml(c)}</div>
+    ${c.jue?'<button class="btn" id="p-fight">⚔️ 去挑战</button>':""}
+    <button class="btn blue" onclick="showSearchPanel()">🔍 返回搜索</button>
+    <button class="btn ghost" onclick="ui.closePanel()">关闭</button>`);
+  const pf=$("p-fight");
+  if(pf)pf.onclick=()=>{closePanel();curScene=sceneOf(c);startBattle(c);};
+}
+$("btn-wrong").onclick=()=>{sfx("pop");location.href="./wrong";};
+$("btn-search").onclick=showSearchPanel;
+
 /* ================= 云存档（Worker + D1） ================= */
 const CLOUD={key:null,busy:false,timer:0};
+let cloudAuto=false;
 try{CLOUD.key=localStorage.getItem(LS+"-cloudkey")||null;}catch(e){}
+if(!CLOUD.key){
+  // 首次运行自动生成云存档密钥：进度自动备份到服务器，换设备/清缓存也能找回
+  cloudAuto=true;
+  CLOUD.key="fq-"+Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+  try{localStorage.setItem(LS+"-cloudkey",CLOUD.key);}catch(e){}
+}
 function cloudBadge(){
   const b=$("btn-cloud");if(!b)return;
   b.textContent=CLOUD.key?"☁️✅":"☁️";
@@ -686,14 +767,19 @@ $("btn-help").onclick=()=>{
     ⚔️ <b>战斗</b>：按顺序点破字泡拼出歌诀，每字一击；点错会被反击扣 ❤️。<br>
     💡 干扰字泡来自其他歌诀，认准你的联想画面！<br>
     ⚡ 歌诀拼完进入<b>方剂连击</b>：答对回复 ❤️ 并加分。<br>
+    📖 连错两个字后魔王会提示下一个字；被击退时会<b>揭晓整段答案</b>，记住再刷！<br>
     ⭐ 又快又准得 3 星；每关都可重复挑战刷星，全部完成场景得 🏆。<br>
-    🎁 宝箱关：点开即得学识与奖励。</p>
+    🎁 宝箱关：点开即得学识与奖励。<br>
+    🔍 <b>搜索复习</b>：地图右上角直接搜病名/方剂/歌诀，随时查看答案。<br>
+    📝 <b>错题复习</b>：右上角进入错题子页面（按套题刷错题）。<br>
+    ☁️ 进度<b>自动云备份</b>；换设备时在用户面板复制密钥输入即可恢复。</p>
     <button class="btn" onclick="ui.closePanel()">开玩！</button>`);
 };
 
 /* ================= 启动 ================= */
 renderMap();
 cloudPull();
+if(cloudAuto)setTimeout(()=>toast("☁️ 已自动开启云存档，进度不会丢（密钥在用户面板里）"),1200);
 if(!localStorage.getItem(LS+"-seen")){
   $("btn-help").click();
   try{localStorage.setItem(LS+"-seen","1");}catch(e){}
